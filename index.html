@@ -2,220 +2,114 @@
 <html lang="fa">
 <head>
 <meta charset="UTF-8" />
-<title>فلوچارت گرافیکی تعاملی</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Flowchart شکایت بعد از سفارش ناموجود شده</title>
 <style>
   body {
-    font-family: sans-serif;
-    direction: rtl;
-    background: #fff;
+    font-family: Tahoma, sans-serif;
+    background: #0a2342;
+    color: #cce7ff;
     padding: 20px;
+    direction: rtl;
   }
-  svg {
-    width: 100%;
-    height: 600px;
-    border: 1px solid #ccc;
+  details {
+    margin-left: 20px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+    background: #0059b3;
+    padding: 10px;
+    box-shadow: 0 0 10px #003d73;
   }
-  .node rect {
-    fill: #0077cc;
-    stroke: #005fa3;
-    stroke-width: 2px;
-    rx: 8;
-    ry: 8;
+  details[open] {
+    background: #0073e6;
+    box-shadow: 0 0 12px #3399ff;
+  }
+  summary {
     cursor: pointer;
+    font-weight: 600;
+    color: #e0f0ff;
   }
-  .node text {
-    fill: white;
-    font-size: 14px;
-    pointer-events: none;
+  summary::-webkit-details-marker {
+    color: #a3d2ff;
   }
-  .link {
-    fill: none;
-    stroke: #66b3e6;
-    stroke-width: 2px;
+  .description {
+    font-size: 0.85rem;
+    color: #c0d8ffcc;
+    margin: 6px 0 6px 15px;
+    border-left: 3px solid #99c2ff;
+    padding-left: 10px;
   }
 </style>
 </head>
 <body>
 
-<h2>فلوچارت تعاملی با خطوط و باز/بسته شدن</h2>
+<details open>
+  <summary>بعد از سفارش گفتند ناموجود شده</summary>
 
-<svg id="chart"></svg>
+  <details>
+    <summary>فروشگاه به روز نبودن قیمت/موجودی را تایید کرده و یا قصد بازگشت وجه دارد</summary>
 
-<script>
-// داده‌های درختی فلوچارت
-const treeData = {
-  id: 0,
-  name: "بعد از سفارش گفتند ناموجود شده",
-  children: [
-    {
-      id: 1,
-      name: "فروشگاه به روز نبودن قیمت/موجودی را تایید کرده و یا قصد بازگشت وجه دارد",
-      children: [
-        {
-          id: 2,
-          name: "بازگشت وجه انجام نشده",
-          children: [
-            {id: 3, name: "کاربر جهت اعلام شماره کارت همکاری ندارد"},
-            {id: 4, name: "بازگشت وجه هنوز انجام نشده"},
-            {
-              id: 5,
-              name: "بازگشت وجه انجام شده",
-              note: "پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.\nوضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند."
-            }
-          ]
-        }
-      ]
-    },
-    {id: 6, name: "فروشگاه پاسخگو نیست و وضعیت ارسال یا عودت وجه نامشخص است"},
-    {id: 7, name: "ارسال کالا ادعا شده اما تحویل به شرکت پستی احراز نشده"},
-    {id: 8, name: "کالا به شرکت پستی تحویل داده شده"},
-    {id: 9, name: "کاربر وجهی پرداخت نکرده"},
-    {id: 10, name: "کالا موجود شده"},
-    {id: 11, name: "هیچ‌کدام"}
-  ]
-};
+    <details>
+      <summary>بازگشت وجه انجام نشده</summary>
 
-const svg = document.getElementById("chart");
-const width = svg.clientWidth;
-const levelHeight = 80;
-const nodeWidth = 280;
-const nodeHeight = 40;
+      <details>
+        <summary>کاربر جهت اعلام شماره کارت همکاری ندارد</summary>
+        <div class="description">پیام «درخواست شماره کارت از کاربر» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود و اگر مجددا کاربر همکاری نداشته باشد تیکت خاتمه می یابد</div>
+      </details>
 
-let nodes = [];
-let links = [];
+      <details>
+        <summary>بازگشت وجه هنوز انجام نشده</summary>
+        <div class="description">نیاز به تماس با فروشگاه، پیام «درخواست بازگشت وجه از فروشگاه» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود و اگر مجدد فروشگاه همکاری نداشته باید غیرفعال می‌شود</div>
+      </details>
+    </details>
 
-let openNodes = new Set([0]); // نودهای باز شده (ابتدا فقط ریشه بازه)
+    <details>
+      <summary>بازگشت وجه انجام شده</summary>
+      <div class="description">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
+    </details>
 
-// محاسبه موقعیت‌ها و روابط برای رسم
-function layout(node, depth = 0, xStart = 20) {
-  let y = depth * levelHeight + 20;
-  let x = xStart;
+  </details>
 
-  // موقعیت خود نود
-  node.x = x;
-  node.y = y;
+  <details>
+    <summary>فروشگاه پاسخگو نیست و وضعیت ارسال یا عودت وجه نامشخص است</summary>
+    <div class="description">پیام درخواست اعلام وضعیت سفارش به فروشگاه ارسال می شود و ددلاین برای 1 روز بعد تنظیم می شود</div>
+  </details>
 
-  nodes.push(node);
+  <details>
+    <summary>فروشگاه پاسخگو نیست و وضعیت ارسال یا عودت وجه هنوز نامشخص است</summary>
+    <div class="description">تماس با فروشگاه و درخواست اعلام وضعیت سفارش، ددلاین برای 1 روز بعد تنظیم می شود و اگر مجدد فروشگاه همکاری نداشته باید غیرفعال می‌شود</div>
+  </details>
 
-  if (!openNodes.has(node.id) || !node.children || node.children.length === 0) {
-    return x + nodeWidth + 20;
-  }
+  <details>
+    <summary>ارسال کالا ادعا شده اما تحویل به شرکت پستی احراز نشده</summary>
+    <div class="description">مراحل ارسال کالا پیگیری می‌شود</div>
+  </details>
 
-  // زیرمجموعه‌ها باز هستند، آنها را کنار هم قرار بده
-  let curX = x;
-  for (const child of node.children) {
-    curX = layout(child, depth + 1, curX);
-  }
+  <details>
+    <summary>کالا به شرکت پستی تحویل داده شده</summary>
+    <div class="description">مراحل ارسال کالا پیگیری می‌شود</div>
+  </details>
 
-  // موقعیت نود فعلی را وسط فرزندانش قرار بده
-  let firstChildX = node.children[0].x;
-  let lastChildX = node.children[node.children.length - 1].x;
-  node.x = (firstChildX + lastChildX) / 2;
+  <details>
+    <summary>کالا موجود شده</summary>
 
-  // ایجاد لینک‌ها به فرزندان
-  for (const child of node.children) {
-    links.push({source: node, target: child});
-  }
+    <details>
+      <summary>کاربر با ارسال کالا مخالف نیست</summary>
+      <div class="description">مراحل ارسال کالا پیگیری می‌شود</div>
+    </details>
 
-  return curX;
-}
+    <details>
+      <summary>کاربر با ارسال کالا مخالف است</summary>
+      <div class="description">مراحل بازگشت وجه پیگیری می‌شود</div>
+    </details>
+  </details>
 
-// پاک کردن svg قبل از رسم مجدد
-function clearSvg() {
-  while (svg.firstChild) {
-    svg.removeChild(svg.firstChild);
-  }
-}
+  <details>
+    <summary>کاربر وجهی پرداخت نکرده</summary>
+    <div class="description">پیام «بروز نبودن قیمت/موجودی و عدم پرداخت کاربر» در تیکت ارسال می‌شود. وضعیت تیکت به «رد شده» تغییر می‌کند.</div>
+  </details>
 
-// رسم خطوط بین نودها
-function drawLinks() {
-  for (const link of links) {
-    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    path.setAttribute("class", "link");
-    // مسیر خط منحنی بین نودها
-    let startX = link.source.x + nodeWidth / 2;
-    let startY = link.source.y + nodeHeight;
-    let endX = link.target.x + nodeWidth / 2;
-    let endY = link.target.y;
-
-    // منحنی ساده Bezier
-    let d = `M${startX},${startY} C${startX},${(startY+endY)/2} ${endX},${(startY+endY)/2} ${endX},${endY}`;
-    path.setAttribute("d", d);
-    svg.appendChild(path);
-  }
-}
-
-// رسم نودها (خانه‌ها)
-function drawNodes() {
-  for (const node of nodes) {
-    const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
-    g.setAttribute("class", "node");
-    g.setAttribute("transform", `translate(${node.x},${node.y})`);
-    g.style.cursor = (node.children && node.children.length > 0) ? "pointer" : "default";
-
-    // مستطیل نود
-    const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-    rect.setAttribute("width", nodeWidth);
-    rect.setAttribute("height", nodeHeight);
-    rect.setAttribute("rx", 8);
-    rect.setAttribute("ry", 8);
-    rect.style.fill = "#0077cc";
-    rect.style.stroke = "#005fa3";
-    rect.style.strokeWidth = "2";
-
-    // متن داخل نود
-    const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-    text.setAttribute("x", 15);
-    text.setAttribute("y", nodeHeight/2 + 5);
-    text.textContent = node.name;
-    text.style.fill = "white";
-    text.style.fontSize = "14px";
-
-    g.appendChild(rect);
-    g.appendChild(text);
-
-    // اگر توضیح (note) داره، پایینش جدا نمایش بده
-    if(node.note) {
-      const noteText = document.createElementNS("http://www.w3.org/2000/svg", "text");
-      noteText.setAttribute("x", 15);
-      noteText.setAttribute("y", nodeHeight + 20);
-      noteText.textContent = node.note;
-      noteText.style.fill = "white";
-      noteText.style.fontSize = "12px";
-      noteText.style.whiteSpace = "pre-line";
-      g.appendChild(noteText);
-    }
-
-    // رویداد کلیک برای باز/بسته کردن زیرمجموعه
-    g.addEventListener("click", (e) => {
-      e.stopPropagation();
-      if(node.children && node.children.length > 0) {
-        if(openNodes.has(node.id)) {
-          openNodes.delete(node.id);
-        } else {
-          openNodes.add(node.id);
-        }
-        render();
-      }
-    });
-
-    svg.appendChild(g);
-  }
-}
-
-// اجرای کامل رسم
-function render() {
-  nodes = [];
-  links = [];
-  clearSvg();
-  layout(treeData);
-  drawLinks();
-  drawNodes();
-}
-
-render();
-
-</script>
+</details>
 
 </body>
 </html>
