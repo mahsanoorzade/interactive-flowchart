@@ -5,13 +5,6 @@
   <title>فلوچارت - سفارش ناموجود</title>
   <style>
     body { font-family: sans-serif; direction: rtl; padding: 20px; background: #fff; color: #333; }
-    .title {
-      text-align: center;
-      font-weight: bold;
-      font-size: 24px;
-      color: #000;
-      margin-bottom: 30px;
-    }
     .node {
       cursor: pointer;
       padding: 6px 12px;
@@ -52,11 +45,18 @@
       border-radius: 6px;
     }
     .node.open + .note-wrapper { display: block; }
+    h1 {
+      text-align: center;
+      font-weight: bold;
+      color: black;
+      margin-bottom: 20px;
+      font-family: sans-serif;
+    }
   </style>
 </head>
 <body>
 
-  <div class="title">فلوچارت درخت‌های تصمیم‌گیری</div>
+  <h1>فلوچارت درخت‌های تصمیم‌گیری</h1>
 
   <div class="node depth-0" onclick="toggle(this)">بعد از سفارش گفتند ناموجود شده</div>
   <div class="children">
