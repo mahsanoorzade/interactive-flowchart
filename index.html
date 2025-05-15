@@ -21,8 +21,9 @@
       border-radius: 6px;
       color: white;
       display: inline-block; /* فقط به اندازه محتوا */
-      max-width: 100%;
+      max-width: fit-content;
       box-sizing: border-box;
+      vertical-align: top; /* برای اینکه تراز عمودی بهتر باشه */
     }
     .depth-0 {
       background: #0077cc;
@@ -66,10 +67,11 @@
       background: #e0e0e0;
       padding: 8px;
       border-radius: 6px;
-      max-width: 100%;
+      display: inline-block;
+      max-width: fit-content;
       box-sizing: border-box;
-      display: inline-block; /* فقط به اندازه محتوا */
-      margin: 0; /* حذف فاصله اضافی */
+      margin: 0 0 6px 0;
+      vertical-align: top;
     }
   </style>
 </head>
