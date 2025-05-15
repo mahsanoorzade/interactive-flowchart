@@ -1,29 +1,17 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>فلوچارت - سفارش ناموجود</title>
   <style>
-    body {
-      font-family: sans-serif;
-      direction: rtl;
-      padding: 20px;
-      background: #fff;
-      color: #333;
-      margin: 0;
-      line-height: 1.4;
-    }
+    body { font-family: sans-serif; direction: rtl; padding: 20px; background: #fff; color: #333; }
     .node {
       cursor: pointer;
       padding: 6px 12px;
       border: 1px solid;
-      margin: 6px 0; /* فاصله عمودی بین هر نود */
+      margin: 6px 0;
       border-radius: 6px;
       color: white;
-      display: inline-block; /* فقط به اندازه محتوا */
-      max-width: fit-content;
-      box-sizing: border-box;
-      vertical-align: top; /* برای اینکه تراز عمودی بهتر باشه */
     }
     .depth-0 {
       background: #0077cc;
@@ -46,33 +34,17 @@
       border-color: #cce6f6;
       color: #003344;
     }
-    .children {
-      display: none;
-      margin-right: 20px;
-      margin-bottom: 6px; /* کمی فاصله پایین‌تر بین بچه‌ها */
-    }
-    .node.open + .children {
-      display: block;
-    }
-    .note-wrapper {
-      display: none;
-      margin-top: 6px;
-    }
-    .node.open + .note-wrapper {
-      display: block;
-    }
+    .children { display: none; margin-right: 20px; }
+    .node.open + .children { display: block; }
+    .note-wrapper { display: none; margin-right: 20px; }
     .note {
       font-size: 0.9em;
       color: #000;
       background: #e0e0e0;
       padding: 8px;
       border-radius: 6px;
-      display: inline-block;
-      max-width: fit-content;
-      box-sizing: border-box;
-      margin: 0 0 6px 0;
-      vertical-align: top;
     }
+    .node.open + .note-wrapper { display: block; }
   </style>
 </head>
 <body>
@@ -85,18 +57,35 @@
 
       <div class="node depth-2" onclick="toggle(this)">بازگشت وجه انجام نشده</div>
       <div class="children">
-        <div class="node depth-3">کاربر جهت اعلام شماره کارت همکاری ندارد</div>
-        <div class="node depth-3">بازگشت وجه هنوز انجام نشده</div>
+        <div class="node depth-3" onclick="toggle(this)">کاربر جهت اعلام شماره کارت همکاری ندارد</div>
+        <div class="note-wrapper">
+          <div class="note">پیام «درخواست شماره کارت از کاربر» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود و اگر مجددا کاربر همکاری نداشته باشد تیکت خاتمه می یابد</div>
+        </div>
+
+        <div class="node depth-3" onclick="toggle(this)">بازگشت وجه هنوز انجام نشده</div>
+        <div class="note-wrapper">
+          <div class="note">پیام «درخواست بازگشت وجه از فروشگاه» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود و اگر مجدد فروشگاه همکاری نداشته باشد غیرفعال می‌شود</div>
+        </div>
+
         <div class="node depth-3" onclick="toggle(this)">بازگشت وجه انجام شده</div>
         <div class="note-wrapper">
           <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
         </div>
       </div>
 
+      <div class="node depth-2" onclick="toggle(this)">بازگشت وجه انجام شده</div>
+      <div class="note-wrapper">
+        <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
+      </div>
+
     </div>
 
     <div class="node depth-1" onclick="toggle(this)">فروشگاه پاسخگو نیست و وضعیت ارسال یا عودت وجه نامشخص است</div>
     <div class="children">
+      <div class="note-wrapper">
+        <div class="note">پیام درخواست اعلام وضعیت سفارش به فروشگاه ارسال می شود و ددلاین برای 1 روز بعد تنظیم می شود</div>
+      </div>
+
       <div class="node depth-2" onclick="toggle(this)">فروشگاه به روز نبودن قیمت/موجودی را تایید کرده و یا قصد بازگشت وجه دارد</div>
       <div class="note-wrapper">
         <div class="note">مراحل بازگشت وجه پیگیری می‌شود</div>
@@ -119,32 +108,46 @@
 
       <div class="node depth-2" onclick="toggle(this)">کالا موجود شده</div>
       <div class="children">
-        <div class="node depth-3">کاربر با ارسال کالا مخالف نیست</div>
-        <div class="node depth-3">کاربر با ارسال کالا مخالف است</div>
+        <div class="node depth-3" onclick="toggle(this)">کاربر با ارسال کالا مخالف نیست</div>
+        <div class="note-wrapper">
+          <div class="note">مراحل ارسال کالا پیگیری می‌شود</div>
+        </div>
+
+        <div class="node depth-3" onclick="toggle(this)">کاربر با ارسال کالا مخالف است</div>
+        <div class="note-wrapper">
+          <div class="note">مراحل بازگشت وجه پیگیری می‌شود</div>
+        </div>
       </div>
     </div>
 
-  </div>
+    <div class="node depth-1" onclick="toggle(this)">ارسال کالا ادعا شده اما تحویل به شرکت پستی احراز نشده</div>
+    <div class="note-wrapper">
+      <div class="note">مراحل ارسال کالا پیگیری می‌شود</div>
+    </div>
 
-  <div class="node depth-0" onclick="toggle(this)">ارسال کالا ادعا شده اما تحویل به شرکت پستی احراز نشده</div>
-  <div class="note-wrapper">
-    <div class="note">مراحل ارسال کالا پیگیری می‌شود</div>
-  </div>
+    <div class="node depth-1" onclick="toggle(this)">کالا به شرکت پستی تحویل داده شده</div>
+    <div class="note-wrapper">
+      <div class="note">مراحل ارسال کالا پیگیری می‌شود</div>
+    </div>
 
-  <div class="node depth-0" onclick="toggle(this)">کالا به شرکت پستی تحویل داده شده</div>
-  <div class="note-wrapper">
-    <div class="note">مراحل ارسال کالا پیگیری می‌شود</div>
-  </div>
+    <div class="node depth-1" onclick="toggle(this)">کاربر وجهی پرداخت نکرده</div>
+    <div class="note-wrapper">
+      <div class="note">پیام «بروز نبودن قیمت/موجودی و عدم پرداخت کاربر» در تیکت ارسال می‌شود. وضعیت تیکت به «رد شده» تغییر می‌کند.</div>
+    </div>
 
-  <div class="node depth-0" onclick="toggle(this)">کاربر وجهی پرداخت نکرده</div>
-  <div class="note-wrapper">
-    <div class="note">پیام «بروز نبودن قیمت/موجودی و عدم پرداخت کاربر» در تیکت ارسال می‌شود. وضعیت تیکت به «رد شده» تغییر می‌کند.</div>
-  </div>
+    <div class="node depth-1" onclick="toggle(this)">کالا موجود شده</div>
+    <div class="children">
+      <div class="node depth-2" onclick="toggle(this)">کاربر با ارسال کالا مخالف نیست</div>
+      <div class="note-wrapper">
+        <div class="note">مراحل ارسال کالا پیگیری می‌شود</div>
+      </div>
 
-  <div class="node depth-0" onclick="toggle(this)">کالا موجود شده</div>
-  <div class="children">
-    <div class="node depth-1">کاربر با ارسال کالا مخالف نیست</div>
-    <div class="node depth-1">کاربر با ارسال کالا مخالف است</div>
+      <div class="node depth-2" onclick="toggle(this)">کاربر با ارسال کالا مخالف است</div>
+      <div class="note-wrapper">
+        <div class="note">مراحل بازگشت وجه پیگیری می‌شود</div>
+      </div>
+    </div>
+
   </div>
 
   <script>
