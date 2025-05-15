@@ -1,128 +1,83 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Flowchart شکایت بعد از سفارش ناموجود شده</title>
+  <meta charset="UTF-8">
+  <title>فلوچارت - سفارش ناموجود</title>
   <style>
-    body {
-      font-family: Tahoma, sans-serif;
-      background: #ffffff;
-      color: #000;
-      padding: 20px;
-      direction: rtl;
-    }
-
-    /* سطح‌بندی رنگ‌ها */
-    details.level-1 {
-      background: #0066cc;
-    }
-    details.level-2 {
-      background: #3399ff;
-    }
-    details.level-3 {
-      background: #66b3ff;
-    }
-    details.level-4 {
-      background: #99ccff;
-    }
-
-    details {
-      margin-left: 20px;
-      margin-bottom: 6px;
-      border-radius: 6px;
-      padding: 10px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
-      color: #ffffff;
-    }
-
-    summary {
+    body { font-family: sans-serif; direction: rtl; padding: 20px; background: #fff; color: #333; }
+    .node {
       cursor: pointer;
-      font-weight: 600;
+      padding: 6px 12px;
+      border: 1px solid;
+      margin: 6px 0;
+      border-radius: 6px;
+      color: white;
     }
-
-    summary::-webkit-details-marker {
-      color: #e0e0e0;
+    .depth-0 {
+      background: #0077cc;
+      border-color: #0077cc;
     }
-
-    .description {
-      font-size: 0.85rem;
-      color: #f0f8ff;
-      margin: 6px 0 6px 15px;
-      border-right: 3px solid #cce5ff;
-      padding-right: 10px;
+    .depth-1 {
+      background: #3399dd;
+      border-color: #3399dd;
+    }
+    .depth-2 {
+      background: #66b3e6;
+      border-color: #66b3e6;
+    }
+    .depth-3 {
+      background: #99ccee;
+      border-color: #99ccee;
+    }
+    .depth-4 {
+      background: #cce6f6;
+      border-color: #cce6f6;
+      color: #003344;
+    }
+    .children { display: none; margin-right: 20px; }
+    .node.open + .children { display: block; }
+    .note {
+      font-size: 0.9em;
+      color: #fff;
+      background: #005fa3;
+      padding: 8px;
+      border-radius: 6px;
+      margin-top: 6px;
     }
   </style>
 </head>
 <body>
+  <div class="node depth-0" onclick="toggle(this)">بعد از سفارش گفتند ناموجود شده</div>
+  <div class="children">
 
-<details class="level-1" open>
-  <summary>بعد از سفارش گفتند ناموجود شده</summary>
+    <div class="node depth-1" onclick="toggle(this)">فروشگاه به روز نبودن قیمت/موجودی را تایید کرده و یا قصد بازگشت وجه دارد</div>
+    <div class="children">
 
-  <details class="level-2">
-    <summary>فروشگاه به روز نبودن قیمت/موجودی را تایید کرده و یا قصد بازگشت وجه دارد</summary>
+      <div class="node depth-2" onclick="toggle(this)">بازگشت وجه انجام نشده</div>
+      <div class="children">
+        <div class="node depth-3">کاربر جهت اعلام شماره کارت همکاری ندارد</div>
+        <div class="node depth-3">بازگشت وجه هنوز انجام نشده</div>
+        <div class="node depth-3" onclick="toggle(this)">بازگشت وجه انجام شده</div>
+        <div class="children">
+          <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
+        </div>
+      </div>
 
-    <details class="level-3">
-      <summary>بازگشت وجه انجام نشده</summary>
+    </div>
 
-      <details class="level-4">
-        <summary>کاربر جهت اعلام شماره کارت همکاری ندارد</summary>
-        <div class="description">پیام «درخواست شماره کارت از کاربر» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود و اگر مجددا کاربر همکاری نداشته باشد تیکت خاتمه می یابد</div>
-      </details>
+    <div class="node depth-1">فروشگاه پاسخگو نیست و وضعیت ارسال یا عودت وجه نامشخص است</div>
+    <div class="node depth-1">ارسال کالا ادعا شده اما تحویل به شرکت پستی احراز نشده</div>
+    <div class="node depth-1">کالا به شرکت پستی تحویل داده شده</div>
+    <div class="node depth-1">کاربر وجهی پرداخت نکرده</div>
+    <div class="node depth-1">کالا موجود شده</div>
+    <div class="node depth-1">هیچ‌کدام</div>
 
-      <details class="level-4">
-        <summary>بازگشت وجه هنوز انجام نشده</summary>
-        <div class="description">نیاز به تماس با فروشگاه، پیام «درخواست بازگشت وجه از فروشگاه» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود و اگر مجدد فروشگاه همکاری نداشته باید غیرفعال می‌شود</div>
-      </details>
-    </details>
+  </div>
 
-    <details class="level-3">
-      <summary>بازگشت وجه انجام شده</summary>
-      <div class="description">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
-    </details>
-
-  </details>
-
-  <details class="level-2">
-    <summary>فروشگاه پاسخگو نیست و وضعیت ارسال یا عودت وجه نامشخص است</summary>
-    <div class="description">پیام درخواست اعلام وضعیت سفارش به فروشگاه ارسال می شود و ددلاین برای 1 روز بعد تنظیم می شود</div>
-  </details>
-
-  <details class="level-2">
-    <summary>فروشگاه پاسخگو نیست و وضعیت ارسال یا عودت وجه هنوز نامشخص است</summary>
-    <div class="description">تماس با فروشگاه و درخواست اعلام وضعیت سفارش، ددلاین برای 1 روز بعد تنظیم می شود و اگر مجدد فروشگاه همکاری نداشته باید غیرفعال می‌شود</div>
-  </details>
-
-  <details class="level-2">
-    <summary>ارسال کالا ادعا شده اما تحویل به شرکت پستی احراز نشده</summary>
-    <div class="description">مراحل ارسال کالا پیگیری می‌شود</div>
-  </details>
-
-  <details class="level-2">
-    <summary>کالا به شرکت پستی تحویل داده شده</summary>
-    <div class="description">مراحل ارسال کالا پیگیری می‌شود</div>
-  </details>
-
-  <details class="level-2">
-    <summary>کالا موجود شده</summary>
-
-    <details class="level-3">
-      <summary>کاربر با ارسال کالا مخالف نیست</summary>
-      <div class="description">مراحل ارسال کالا پیگیری می‌شود</div>
-    </details>
-
-    <details class="level-3">
-      <summary>کاربر با ارسال کالا مخالف است</summary>
-      <div class="description">مراحل بازگشت وجه پیگیری می‌شود</div>
-    </details>
-  </details>
-
-  <details class="level-2">
-    <summary>کاربر وجهی پرداخت نکرده</summary>
-    <div class="description">پیام «بروز نبودن قیمت/موجودی و عدم پرداخت کاربر» در تیکت ارسال می‌شود. وضعیت تیکت به «رد شده» تغییر می‌کند.</div>
-  </details>
-
-</details>
-
+  <script>
+    function toggle(el) {
+      el.classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
