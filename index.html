@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="فا">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>فلوچارت - سفارش ناموجود</title>
   <style>
-    body { font-family: sans-serif; direction: rtl; padding: 20px; background: #fff; color: #333; }
+    body {
+      font-family: sans-serif;
+      direction: rtl;
+      padding: 20px;
+      background: #fff;
+      color: #333;
+    }
     .title {
       text-align: center;
       font-weight: bold;
@@ -41,9 +47,17 @@
       border-color: #cce6f6;
       color: #003344;
     }
-    .children { display: none; margin-right: 20px; }
-    .node.open + .children { display: block; }
-    .note-wrapper { display: none; margin-right: 20px; }
+    .children {
+      display: none;
+      margin-right: 20px;
+    }
+    .node.open + .children {
+      display: block;
+    }
+    .note-wrapper {
+      display: none;
+      margin-right: 20px;
+    }
     .note {
       font-size: 0.9em;
       color: #000;
@@ -51,11 +65,23 @@
       padding: 8px;
       border-radius: 6px;
     }
-    .node.open + .note-wrapper { display: block; }
+    .node.open + .note-wrapper {
+      display: block;
+    }
+    /* استایل جدید برای نوت به صورت فرزند */
+    .note-child {
+      background: #e0e0e0;
+      color: #000;
+      padding: 8px;
+      border-radius: 6px;
+      margin: 6px 0 6px 20px; /* فاصله مشابه نوت‌ها ولی به عنوان فرزند */
+      font-size: 0.9em;
+      border: 1px solid #ccc;
+      cursor: default;
+    }
   </style>
 </head>
 <body>
-
   <div class="title">فلوچارت درخت‌های تصمیم‌گیری</div>
 
   <div class="node depth-0" onclick="toggle(this)">بعد از سفارش گفتند ناموجود شده</div>
@@ -78,22 +104,21 @@
 
         <div class="node depth-3" onclick="toggle(this)">بازگشت وجه انجام شده</div>
         <div class="note-wrapper">
-          <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
+          <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br />وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
         </div>
       </div>
 
       <div class="node depth-2" onclick="toggle(this)">بازگشت وجه انجام شده</div>
       <div class="note-wrapper">
-        <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
+        <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br />وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
       </div>
 
     </div>
 
     <div class="node depth-1" onclick="toggle(this)">فروشگاه پاسخگو نیست و وضعیت ارسال یا عودت وجه نامشخص است</div>
     <div class="children">
-      <div class="note-wrapper">
-        <div class="note">پیام درخواست اعلام وضعیت سفارش به فروشگاه ارسال می شود و ددلاین برای 1 روز بعد تنظیم می شود</div>
-      </div>
+      <!-- نوت به عنوان فرزند اضافه شده -->
+      <div class="note-child">پیام درخواست اعلام وضعیت سفارش به فروشگاه ارسال می شود و ددلاین برای 1 روز بعد تنظیم می شود</div>
 
       <div class="node depth-2" onclick="toggle(this)">فروشگاه به روز نبودن قیمت/موجودی را تایید کرده و یا قصد بازگشت وجه دارد</div>
       <div class="note-wrapper">
