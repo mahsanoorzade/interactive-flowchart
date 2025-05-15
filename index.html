@@ -1,82 +1,48 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>فلوچارت تعاملی تستی</title>
+  <meta charset="UTF-8">
+  <title>فلوچارت - سفارش ناموجود</title>
   <style>
-    body {
-      font-family: Tahoma, sans-serif;
-      padding: 20px;
-      background: #f0f4f8;
-    }
-    .node {
-      background: #fff;
-      border-radius: 8px;
-      margin: 8px 0;
-      padding: 10px 15px;
-      border: 2px solid #0078d7;
-      cursor: pointer;
-      user-select: none;
-      position: relative;
-      transition: background 0.3s;
-    }
-    .node:hover {
-      background: #e1f0ff;
-    }
-    .child {
-      margin-right: 20px;
-      margin-top: 8px;
-      border-right: 2px solid #0078d7;
-      padding-right: 15px;
-      display: none;
-    }
-    .open > .child {
-      display: block;
-    }
-    /* فلش کوچک کنار هر node */
-    .node::before {
-      content: "▶";
-      display: inline-block;
-      margin-left: 8px;
-      transition: transform 0.3s ease;
-    }
-    .open::before {
-      transform: rotate(90deg);
-    }
+    body { font-family: sans-serif; direction: rtl; padding: 20px; background: #fff; color: #333; }
+    .node { cursor: pointer; padding: 6px 12px; border: 1px solid #888; margin: 6px 0; border-radius: 6px; background: #f0f0f0; }
+    .children { display: none; margin-right: 20px; }
+    .node.open + .children { display: block; }
+    .note { font-size: 0.9em; color: #555; margin-top: 4px; }
   </style>
 </head>
 <body>
-  <div class="node" onclick="toggle(this)">
-    شروع
-    <div class="child">
-      <div class="node" onclick="toggle(event, this)">
-        بررسی سفارش
-        <div class="child">
-          <div class="node">تأیید فروشگاه</div>
-          <div class="node">رد فروشگاه</div>
+  <div class="node" onclick="toggle(this)">بعد از سفارش گفتند ناموجود شده</div>
+  <div class="children">
+
+    <div class="node" onclick="toggle(this)">فروشگاه به روز نبودن قیمت/موجودی را تایید کرده و یا قصد بازگشت وجه دارد</div>
+    <div class="children">
+
+      <div class="node" onclick="toggle(this)">بازگشت وجه انجام نشده</div>
+      <div class="children">
+        <div class="node">کاربر جهت اعلام شماره کارت همکاری ندارد</div>
+        <div class="node">بازگشت وجه هنوز انجام نشده</div>
+        <div class="node" onclick="toggle(this)">بازگشت وجه انجام شده</div>
+        <div class="children">
+          <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
         </div>
       </div>
-      <div class="node" onclick="toggle(event, this)">
-        تماس با کاربر
-        <div class="child">
-          <div class="node">اولین تماس</div>
-          <div class="node">تماس مجدد</div>
-        </div>
-      </div>
+
     </div>
+
+    <div class="node">فروشگاه پاسخگو نیست و وضعیت ارسال یا عودت وجه نامشخص است</div>
+    <div class="node">ارسال کالا ادعا شده اما تحویل به شرکت پستی احراز نشده</div>
+    <div class="node">کالا به شرکت پستی تحویل داده شده</div>
+    <div class="node">کاربر وجهی پرداخت نکرده</div>
+    <div class="node">کالا موجود شده</div>
+    <div class="node">هیچ‌کدام</div>
+
   </div>
 
-<script>
-  function toggle(event, element) {
-    event.stopPropagation(); // جلوگیری از باز شدن چندگانه
-    element.classList.toggle("open");
-  }
-
-  // فقط در صورتی که کلیک روی گره بالایی باشه (بدون ارسال element) اجرا میشه
-  document.querySelector(".node").addEventListener("click", function(event){
-    this.classList.toggle("open");
-  });
-</script>
+  <script>
+    function toggle(el) {
+      el.classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
