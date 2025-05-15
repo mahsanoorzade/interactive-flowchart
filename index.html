@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="فا">
+<html lang="fa">
 <head>
   <meta charset="UTF-8" />
   <title>فلوچارت - سفارش ناموجود</title>
@@ -64,24 +64,28 @@
       background: #e0e0e0;
       padding: 8px;
       border-radius: 6px;
+      font-family: inherit;
     }
     .node.open + .note-wrapper {
       display: block;
     }
-    /* استایل جدید برای نوت به صورت فرزند */
+    /* استایل مخصوص نوت به شکل فرزند */
     .note-child {
-      background: #e0e0e0;
+      font-size: 0.9em;
       color: #000;
+      background: #e0e0e0;
       padding: 8px;
       border-radius: 6px;
-      margin: 6px 0 6px 20px; /* فاصله مشابه نوت‌ها ولی به عنوان فرزند */
-      font-size: 0.9em;
+      margin-right: 20px;
+      font-family: inherit; /* فونت را از والد به ارث می‌برد */
       border: 1px solid #ccc;
-      cursor: default;
+      display: block;
+      white-space: normal;
     }
   </style>
 </head>
 <body>
+
   <div class="title">فلوچارت درخت‌های تصمیم‌گیری</div>
 
   <div class="node depth-0" onclick="toggle(this)">بعد از سفارش گفتند ناموجود شده</div>
@@ -104,21 +108,20 @@
 
         <div class="node depth-3" onclick="toggle(this)">بازگشت وجه انجام شده</div>
         <div class="note-wrapper">
-          <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br />وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
+          <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
         </div>
       </div>
 
       <div class="node depth-2" onclick="toggle(this)">بازگشت وجه انجام شده</div>
       <div class="note-wrapper">
-        <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br />وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
+        <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
       </div>
 
     </div>
 
     <div class="node depth-1" onclick="toggle(this)">فروشگاه پاسخگو نیست و وضعیت ارسال یا عودت وجه نامشخص است</div>
     <div class="children">
-      <!-- نوت به عنوان فرزند اضافه شده -->
-      <div class="note-child">پیام درخواست اعلام وضعیت سفارش به فروشگاه ارسال می شود و ددلاین برای 1 روز بعد تنظیم می شود</div>
+      <div class="note-child">پیام درخواست اعلام وضعیت سفارش به فروشگاه ارسال می شود و ددلاین برای 1 روز بعد تنظیم می شود :</div>
 
       <div class="node depth-2" onclick="toggle(this)">فروشگاه به روز نبودن قیمت/موجودی را تایید کرده و یا قصد بازگشت وجه دارد</div>
       <div class="note-wrapper">
