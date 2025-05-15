@@ -14,7 +14,7 @@
     h1 {
       text-align: center;
       font-weight: bold;
-      color: yellow; /* رنگ زرد */
+      color: black; /* رنگ مشکی */
       margin-bottom: 20px;
       font-family: sans-serif;
     }
@@ -65,11 +65,6 @@
       margin-right: 20px;
       margin-top: 4px;
       margin-bottom: 8px;
-      display: none;
-    }
-    /* وقتی نود باز است، نوت را نمایش بده */
-    .node.open + .note {
-      display: block;
     }
   </style>
 </head>
@@ -81,13 +76,10 @@
   <div class="children">
 
     <div class="node depth-1" onclick="toggle(this)">فروشگاه به روز نبودن قیمت/موجودی را تایید کرده و یا قصد بازگشت وجه دارد</div>
-    <div class="note">مثال: نوت این بخش (اختیاری)</div>
     <div class="children">
 
       <div class="node depth-2" onclick="toggle(this)">بازگشت وجه انجام نشده</div>
       <div class="children">
-
-        <div class="node depth-3" onclick="toggle(this)">کاربر جهت اعلام شماره کارت همکاری ندارد</div>
         <div class="note">پیام «درخواست شماره کارت از کاربر» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود و اگر مجددا کاربر همکاری نداشته باشد تیکت خاتمه می یابد</div>
 
         <div class="node depth-3" onclick="toggle(this)">بازگشت وجه هنوز انجام نشده</div>
@@ -95,17 +87,15 @@
 
         <div class="node depth-3" onclick="toggle(this)">بازگشت وجه انجام شده</div>
         <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
-
       </div>
 
       <div class="node depth-2" onclick="toggle(this)">بازگشت وجه انجام شده</div>
       <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
-
     </div>
 
     <div class="node depth-1" onclick="toggle(this)">فروشگاه پاسخگو نیست و وضعیت ارسال یا عودت وجه نامشخص است</div>
-    <div class="note">پیام درخواست اعلام وضعیت سفارش به فروشگاه ارسال می شود و ددلاین برای 1 روز بعد تنظیم می شود</div>
     <div class="children">
+      <div class="note">پیام درخواست اعلام وضعیت سفارش به فروشگاه ارسال می شود و ددلاین برای 1 روز بعد تنظیم می شود</div>
 
       <div class="node depth-2" onclick="toggle(this)">فروشگاه به روز نبودن قیمت/موجودی را تایید کرده و یا قصد بازگشت وجه دارد</div>
       <div class="note">مراحل بازگشت وجه پیگیری می‌شود</div>
