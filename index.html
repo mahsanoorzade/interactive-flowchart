@@ -8,11 +8,31 @@
     .node {
       cursor: pointer;
       padding: 6px 12px;
-      border: 1px solid #0077cc;
+      border: 1px solid;
       margin: 6px 0;
       border-radius: 6px;
-      background: #0077cc;
       color: white;
+    }
+    .depth-0 {
+      background: #0077cc;
+      border-color: #0077cc;
+    }
+    .depth-1 {
+      background: #3399dd;
+      border-color: #3399dd;
+    }
+    .depth-2 {
+      background: #66b3e6;
+      border-color: #66b3e6;
+    }
+    .depth-3 {
+      background: #99ccee;
+      border-color: #99ccee;
+    }
+    .depth-4 {
+      background: #cce6f6;
+      border-color: #cce6f6;
+      color: #003344;
     }
     .children { display: none; margin-right: 20px; }
     .node.open + .children { display: block; }
@@ -27,17 +47,17 @@
   </style>
 </head>
 <body>
-  <div class="node" onclick="toggle(this)">بعد از سفارش گفتند ناموجود شده</div>
+  <div class="node depth-0" onclick="toggle(this)">بعد از سفارش گفتند ناموجود شده</div>
   <div class="children">
 
-    <div class="node" onclick="toggle(this)">فروشگاه به روز نبودن قیمت/موجودی را تایید کرده و یا قصد بازگشت وجه دارد</div>
+    <div class="node depth-1" onclick="toggle(this)">فروشگاه به روز نبودن قیمت/موجودی را تایید کرده و یا قصد بازگشت وجه دارد</div>
     <div class="children">
 
-      <div class="node" onclick="toggle(this)">بازگشت وجه انجام نشده</div>
+      <div class="node depth-2" onclick="toggle(this)">بازگشت وجه انجام نشده</div>
       <div class="children">
-        <div class="node">کاربر جهت اعلام شماره کارت همکاری ندارد</div>
-        <div class="node">بازگشت وجه هنوز انجام نشده</div>
-        <div class="node" onclick="toggle(this)">بازگشت وجه انجام شده</div>
+        <div class="node depth-3">کاربر جهت اعلام شماره کارت همکاری ندارد</div>
+        <div class="node depth-3">بازگشت وجه هنوز انجام نشده</div>
+        <div class="node depth-3" onclick="toggle(this)">بازگشت وجه انجام شده</div>
         <div class="children">
           <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
         </div>
@@ -45,12 +65,12 @@
 
     </div>
 
-    <div class="node">فروشگاه پاسخگو نیست و وضعیت ارسال یا عودت وجه نامشخص است</div>
-    <div class="node">ارسال کالا ادعا شده اما تحویل به شرکت پستی احراز نشده</div>
-    <div class="node">کالا به شرکت پستی تحویل داده شده</div>
-    <div class="node">کاربر وجهی پرداخت نکرده</div>
-    <div class="node">کالا موجود شده</div>
-    <div class="node">هیچ‌کدام</div>
+    <div class="node depth-1">فروشگاه پاسخگو نیست و وضعیت ارسال یا عودت وجه نامشخص است</div>
+    <div class="node depth-1">ارسال کالا ادعا شده اما تحویل به شرکت پستی احراز نشده</div>
+    <div class="node depth-1">کالا به شرکت پستی تحویل داده شده</div>
+    <div class="node depth-1">کاربر وجهی پرداخت نکرده</div>
+    <div class="node depth-1">کالا موجود شده</div>
+    <div class="node depth-1">هیچ‌کدام</div>
 
   </div>
 
