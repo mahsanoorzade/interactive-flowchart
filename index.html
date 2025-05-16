@@ -2,7 +2,7 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8" />
-  <title>فلوچارت - سفارش ناموجود</title>
+  <title>فلوچارت - سفارش ناموجود و قیمت تغییر کرده</title>
   <style>
     body {
       font-family: sans-serif;
@@ -186,48 +186,47 @@
     </div>
 
   </div>
-  
-<!-- فلوچارت دوم: قیمت بعد از سفارش تغییر کرده -->
-  <div style="margin-top: 80px;"></div>
 
-
-  <div class="node depth-0" onclick="toggle(this)">قیمت بعد از ثبت سفارش تغییر کرده</div>
+  <!-- فلوی دوم: قیمت بعد از سفارش تغییر کرده -->
+  <br/><br/>
+  <div class="node depth-0" onclick="toggle(this)">قیمت بعد از سفارش تغییر کرده</div>
   <div class="children">
-    <!-- اینجا بعداً می‌تونی فرزندهاش رو اضافه کنی -->
-   <!--     پیام «درخواست توضیح وضعیت پرداخت کاربر بعد از افزایش قیمت» در تیکت ارسال می‌شود. -->
-    
+
     <div class="node depth-1" onclick="toggle(this)">قیمت تغییر کرده و وضعیت پرداخت کاربر مشخص نیست</div>
+    <div class="note-child">پیام «درخواست توضیح وضعیت پرداخت کاربر بعد از افزایش قیمت» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می‌شود</div>
     <div class="children">
-      <div class="note-child">  پیام «درخواست توضیح وضعیت پرداخت کاربر بعد از افزایش قیمت» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می‌شود :</div>
-        <div class="node depth-2" onclick="toggle(this)">قیمت تغییر کرده و وضعیت پرداخت کاربر هنوز مشخص نیست</div>
+
+      <div class="node depth-2" onclick="toggle(this)">قیمت تغییر کرده و وضعیت پرداخت کاربر هنوز مشخص نیست</div>
+      <div class="children">
+        <div class="note-child">طی تماس از کاربر پیگیری صورت می‌گیرد و در صورتی که مجدد پاسخگو نباشد تیکت خاتمه می‌یابد.</div>
+      </div>
+
+      <div class="node depth-2" onclick="toggle(this)">وجه اولیه پرداخت شده اما وجه مازاد پرداخت نشده</div>
+      <div class="children">
+        <div class="node depth-3" onclick="toggle(this)">به دلیل تغییر قیمت، بازگشت وجه انجام شده</div>
         <div class="note-wrapper">
-        <div class="note">طی تماس از کاربر پیگیری صورت می‌گیرد و در صورتی که مجدد پاسخگو نباشد تیکت خاتمه می‌یابد.</div>
-        </div>  
-</div>
-    
-      <div class="node depth-1" onclick="toggle(this)">وجه اولیه پرداخت شده اما وجه مازاد پرداخت نشده</div>
-    <div class="children"> 
-  </div>
-    
-   <div class="node depth-1" onclick="toggle(this)">کاربر وجه مازاد را پرداخت کرده</div>
-    <div class="children"> 
-  </div>
+          <div class="note">پیام «دلجویی و اطلاع از بازگشت وجه» در تیکت ارسال می‌شود. تیکت خاتمه می‌یابد.</div>
+        </div>
 
-    <div class="node depth-1" onclick="toggle(this)">همه وجوه پرداخت شده عودت شده</div>
-    <div class="note-wrapper">
-        <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود و وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div> 
-  </div>
+        <div class="node depth-3" onclick="toggle(this)">بازگشت وجه انجام نشده</div>
+        <div class="note-wrapper">
+          <div class="note">پیام «درخواست بازگشت وجه از فروشگاه» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود و اگر مجددا فروشگاه همکاری نداشته باشد تیکت خاتمه می‌یابد.</div>
+        </div>
+      </div>
 
-    <div class="node depth-1" onclick="toggle(this)">کاربر وجهی پرداخت نکرده</div>
+      <div class="node depth-2" onclick="toggle(this)">کاربر مایل به پرداخت مابه‌التفاوت قیمت است</div>
       <div class="note-wrapper">
-        <div class="note">پیام «بروز نبودن قیمت/موجودی و عدم پرداخت کاربر» در تیکت ارسال می‌شود و وضعیت تیکت به «رد شده» تغییر می‌کند.</div>
-        </div>  
+        <div class="note">پیام «هماهنگی ارسال کالا با مابه‌التفاوت» ارسال می‌شود و تیکت خاتمه می‌یابد.</div>
+      </div>
+
+    </div>
   </div>
-    
-  <script>
-    function toggle(el) {
-      el.classList.toggle('open');
-    }
-  </script>
+
+<script>
+  function toggle(el) {
+    el.classList.toggle("open");
+  }
+</script>
+
 </body>
 </html>
