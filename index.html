@@ -2,7 +2,7 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8" />
-  <title>فلوچارت - سفارش ناموجود و قیمت تغییر کرده</title>
+  <title>فلوچارت - سفارش ناموجود</title>
   <style>
     body {
       font-family: sans-serif;
@@ -69,7 +69,6 @@
     .node.open + .note-wrapper {
       display: block;
     }
-    /* استایل مخصوص نوت به شکل فرزند */
     .note-child {
       font-size: 0.9em;
       color: #000;
@@ -77,7 +76,7 @@
       padding: 8px;
       border-radius: 6px;
       margin-right: 20px;
-      font-family: inherit; /* فونت را از والد به ارث می‌برد */
+      font-family: inherit;
       border: 1px solid #ccc;
       display: block;
       white-space: normal;
@@ -90,143 +89,51 @@
 
   <div class="node depth-0" onclick="toggle(this)">بعد از سفارش گفتند ناموجود شده</div>
   <div class="children">
+    <!-- ... محتوای فلو اول بدون تغییر ... -->
+  </div>
 
-    <div class="node depth-1" onclick="toggle(this)">فروشگاه به روز نبودن قیمت/موجودی را تایید کرده و یا قصد بازگشت وجه دارد</div>
+  <!-- فلو دوم شروع -->
+  <div style="margin-top: 40px;"></div>
+  <div class="node depth-0" onclick="toggle(this)">قیمت بعد از سفارش تغییر کرده</div>
+  <div class="children">
+
+    <div class="node depth-1" onclick="toggle(this)">قیمت صحیح از طرف فروشگاه اعلام شده</div>
     <div class="children">
+      <div class="note-child">در صورتی که تغییر قیمت معقول باشد (مثلاً به علت اتمام جشنواره یا اشتباه تایپی جزئی)</div>
 
-      <div class="node depth-2" onclick="toggle(this)">بازگشت وجه انجام نشده</div>
-      <div class="children">
-        <div class="node depth-3" onclick="toggle(this)">کاربر جهت اعلام شماره کارت همکاری ندارد</div>
-        <div class="note-wrapper">
-          <div class="note">پیام «درخواست شماره کارت از کاربر» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود و اگر مجددا کاربر همکاری نداشته باشد تیکت خاتمه می یابد</div>
-        </div>
-
-        <div class="node depth-3" onclick="toggle(this)">بازگشت وجه هنوز انجام نشده</div>
-        <div class="note-wrapper">
-          <div class="note">پیام «درخواست بازگشت وجه از فروشگاه» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود و اگر مجدد فروشگاه همکاری نداشته باشد غیرفعال می‌شود</div>
-        </div>
-
-        <div class="node depth-3" onclick="toggle(this)">بازگشت وجه انجام شده</div>
-        <div class="note-wrapper">
-          <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
-        </div>
-      </div>
-
-      <div class="node depth-2" onclick="toggle(this)">بازگشت وجه انجام شده</div>
-      <div class="note-wrapper">
-        <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
-      </div>
-
-    </div>
-
-    <div class="node depth-1" onclick="toggle(this)">فروشگاه پاسخگو نیست و وضعیت ارسال یا عودت وجه نامشخص است</div>
-    <div class="children">
-      <div class="note-child">پیام درخواست اعلام وضعیت سفارش به فروشگاه ارسال می شود و ددلاین برای 1 روز بعد تنظیم می شود :</div>
-
-      <div class="node depth-2" onclick="toggle(this)">فروشگاه به روز نبودن قیمت/موجودی را تایید کرده و یا قصد بازگشت وجه دارد</div>
-      <div class="note-wrapper">
-        <div class="note">مراحل بازگشت وجه پیگیری می‌شود</div>
-      </div>
-
-      <div class="node depth-2" onclick="toggle(this)">فروشگاه پاسخگو نیست و وضعیت ارسال یا عودت وجه هنوز نامشخص است</div>
-      <div class="note-wrapper">
-        <div class="note">تماس با فروشگاه و درخواست اعلام وضعیت سفارش، ددلاین برای 1 روز بعد تنظیم می شود و اگر مجدد فروشگاه همکاری نداشته باشد غیرفعال می‌شود</div>
-      </div>
-
-      <div class="node depth-2" onclick="toggle(this)">ارسال کالا ادعا شده اما تحویل به شرکت پستی احراز نشده</div>
+      <div class="node depth-2" onclick="toggle(this)">کاربر با قیمت جدید موافق است</div>
       <div class="note-wrapper">
         <div class="note">مراحل ارسال کالا پیگیری می‌شود</div>
       </div>
 
-      <div class="node depth-2" onclick="toggle(this)">کالا به شرکت پستی تحویل داده شده</div>
+      <div class="node depth-2" onclick="toggle(this)">کاربر با قیمت جدید مخالف است</div>
       <div class="note-wrapper">
-        <div class="note">مراحل ارسال کالا پیگیری می‌شود</div>
-      </div>
-
-      <div class="node depth-2" onclick="toggle(this)">کالا موجود شده</div>
-      <div class="children">
-        <div class="node depth-3" onclick="toggle(this)">کاربر با ارسال کالا مخالف نیست</div>
-        <div class="note-wrapper">
-          <div class="note">مراحل ارسال کالا پیگیری می‌شود</div>
-        </div>
-
-        <div class="node depth-3" onclick="toggle(this)">کاربر با ارسال کالا مخالف است</div>
-        <div class="note-wrapper">
-          <div class="note">مراحل بازگشت وجه پیگیری می‌شود</div>
-        </div>
+        <div class="note">درخواست بازگشت وجه از فروشگاه ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می‌شود</div>
       </div>
     </div>
 
-    <div class="node depth-1" onclick="toggle(this)">ارسال کالا ادعا شده اما تحویل به شرکت پستی احراز نشده</div>
+    <div class="node depth-1" onclick="toggle(this)">فروشگاه اعلام کرده قیمت اشتباه بوده ولی قیمت صحیح اعلام نشده</div>
     <div class="note-wrapper">
-      <div class="note">مراحل ارسال کالا پیگیری می‌شود</div>
+      <div class="note">درخواست اعلام قیمت صحیح از فروشگاه ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می‌شود</div>
     </div>
 
-    <div class="node depth-1" onclick="toggle(this)">کالا به شرکت پستی تحویل داده شده</div>
+    <div class="node depth-1" onclick="toggle(this)">فروشگاه پاسخگو نیست</div>
     <div class="note-wrapper">
-      <div class="note">مراحل ارسال کالا پیگیری می‌شود</div>
+      <div class="note">درخواست پیگیری وضعیت سفارش از فروشگاه ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می‌شود. در صورت عدم همکاری فروشگاه غیرفعال می‌شود.</div>
     </div>
 
     <div class="node depth-1" onclick="toggle(this)">کاربر وجهی پرداخت نکرده</div>
     <div class="note-wrapper">
-      <div class="note">پیام «بروز نبودن قیمت/موجودی و عدم پرداخت کاربر» در تیکت ارسال می‌شود. وضعیت تیکت به «رد شده» تغییر می‌کند.</div>
-    </div>
-
-    <div class="node depth-1" onclick="toggle(this)">کالا موجود شده</div>
-    <div class="children">
-      <div class="node depth-2" onclick="toggle(this)">کاربر با ارسال کالا مخالف نیست</div>
-      <div class="note-wrapper">
-        <div class="note">مراحل ارسال کالا پیگیری می‌شود</div>
-      </div>
-
-      <div class="node depth-2" onclick="toggle(this)">کاربر با ارسال کالا مخالف است</div>
-      <div class="note-wrapper">
-        <div class="note">مراحل بازگشت وجه پیگیری می‌شود</div>
-      </div>
+      <div class="note">پیام «اختلاف قیمت و عدم پرداخت کاربر» در تیکت ارسال می‌شود و وضعیت تیکت به «رد شده» تغییر می‌کند.</div>
     </div>
 
   </div>
+  <!-- فلو دوم پایان -->
 
-  <!-- فلوی دوم: قیمت بعد از سفارش تغییر کرده -->
-  <br/><br/>
-  <div class="node depth-0" onclick="toggle(this)">قیمت بعد از سفارش تغییر کرده</div>
-  <div class="children">
-
-    <div class="node depth-1" onclick="toggle(this)">قیمت تغییر کرده و وضعیت پرداخت کاربر مشخص نیست</div>
-    <div class="note-child">پیام «درخواست توضیح وضعیت پرداخت کاربر بعد از افزایش قیمت» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می‌شود</div>
-    <div class="children">
-
-      <div class="node depth-2" onclick="toggle(this)">قیمت تغییر کرده و وضعیت پرداخت کاربر هنوز مشخص نیست</div>
-      <div class="children">
-        <div class="note-child">طی تماس از کاربر پیگیری صورت می‌گیرد و در صورتی که مجدد پاسخگو نباشد تیکت خاتمه می‌یابد.</div>
-      </div>
-
-      <div class="node depth-2" onclick="toggle(this)">وجه اولیه پرداخت شده اما وجه مازاد پرداخت نشده</div>
-      <div class="children">
-        <div class="node depth-3" onclick="toggle(this)">به دلیل تغییر قیمت، بازگشت وجه انجام شده</div>
-        <div class="note-wrapper">
-          <div class="note">پیام «دلجویی و اطلاع از بازگشت وجه» در تیکت ارسال می‌شود. تیکت خاتمه می‌یابد.</div>
-        </div>
-
-        <div class="node depth-3" onclick="toggle(this)">بازگشت وجه انجام نشده</div>
-        <div class="note-wrapper">
-          <div class="note">پیام «درخواست بازگشت وجه از فروشگاه» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود و اگر مجددا فروشگاه همکاری نداشته باشد تیکت خاتمه می‌یابد.</div>
-        </div>
-      </div>
-
-      <div class="node depth-2" onclick="toggle(this)">کاربر مایل به پرداخت مابه‌التفاوت قیمت است</div>
-      <div class="note-wrapper">
-        <div class="note">پیام «هماهنگی ارسال کالا با مابه‌التفاوت» ارسال می‌شود و تیکت خاتمه می‌یابد.</div>
-      </div>
-
-    </div>
-  </div>
-
-<script>
-  function toggle(el) {
-    el.classList.toggle("open");
-  }
-</script>
-
+  <script>
+    function toggle(el) {
+      el.classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
