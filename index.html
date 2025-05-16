@@ -2,7 +2,7 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8" />
-  <title>فلوچارت - سفارش ناموجود</title>
+  <title>فلوچارت - سفارش ناموجود و تغییر قیمت</title>
   <style>
     body {
       font-family: sans-serif;
@@ -25,6 +25,7 @@
       margin: 6px 0;
       border-radius: 6px;
       color: white;
+      user-select: none;
     }
     .depth-0 {
       background: #0077cc;
@@ -58,29 +59,23 @@
       display: none;
       margin-right: 20px;
     }
-    .note {
+    .node.open + .note-wrapper {
+      display: block;
+    }
+    .note, .note-child {
       font-size: 0.9em;
       color: #000;
       background: #e0e0e0;
       padding: 8px;
       border-radius: 6px;
       font-family: inherit;
-    }
-    .node.open + .note-wrapper {
-      display: block;
-    }
-    /* استایل مخصوص نوت به شکل فرزند */
-    .note-child {
-      font-size: 0.9em;
-      color: #000;
-      background: #e0e0e0;
-      padding: 8px;
-      border-radius: 6px;
-      margin-right: 20px;
-      font-family: inherit; /* فونت را از والد به ارث می‌برد */
       border: 1px solid #ccc;
-      display: block;
       white-space: normal;
+      margin: 6px 0 6px 20px;
+    }
+    .note-child {
+      margin-right: 20px;
+      display: block;
     }
   </style>
 </head>
@@ -88,109 +83,274 @@
 
   <div class="title">فلوچارت درخت‌های تصمیم‌گیری</div>
 
-  <div class="node depth-0" onclick="toggle(this)">بعد از سفارش گفتند ناموجود شده</div>
-  <div class="children">
-
-    <div class="node depth-1" onclick="toggle(this)">فروشگاه به روز نبودن قیمت/موجودی را تایید کرده و یا قصد بازگشت وجه دارد</div>
-    <div class="children">
-
-      <div class="node depth-2" onclick="toggle(this)">بازگشت وجه انجام نشده</div>
-      <div class="children">
-        <div class="node depth-3" onclick="toggle(this)">کاربر جهت اعلام شماره کارت همکاری ندارد</div>
-        <div class="note-wrapper">
-          <div class="note">پیام «درخواست شماره کارت از کاربر» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود و اگر مجددا کاربر همکاری نداشته باشد تیکت خاتمه می یابد</div>
-        </div>
-
-        <div class="node depth-3" onclick="toggle(this)">بازگشت وجه هنوز انجام نشده</div>
-        <div class="note-wrapper">
-          <div class="note">پیام «درخواست بازگشت وجه از فروشگاه» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود و اگر مجدد فروشگاه همکاری نداشته باشد غیرفعال می‌شود</div>
-        </div>
-
-        <div class="node depth-3" onclick="toggle(this)">بازگشت وجه انجام شده</div>
-        <div class="note-wrapper">
-          <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
-        </div>
-      </div>
-
-      <div class="node depth-2" onclick="toggle(this)">بازگشت وجه انجام شده</div>
-      <div class="note-wrapper">
-        <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
-      </div>
-
-    </div>
-
-    <div class="node depth-1" onclick="toggle(this)">فروشگاه پاسخگو نیست و وضعیت ارسال یا عودت وجه نامشخص است</div>
-    <div class="children">
-      <div class="note-child">پیام درخواست اعلام وضعیت سفارش به فروشگاه ارسال می شود و ددلاین برای 1 روز بعد تنظیم می شود :</div>
-
-      <div class="node depth-2" onclick="toggle(this)">فروشگاه به روز نبودن قیمت/موجودی را تایید کرده و یا قصد بازگشت وجه دارد</div>
-      <div class="note-wrapper">
-        <div class="note">مراحل بازگشت وجه پیگیری می‌شود</div>
-      </div>
-
-      <div class="node depth-2" onclick="toggle(this)">فروشگاه پاسخگو نیست و وضعیت ارسال یا عودت وجه هنوز نامشخص است</div>
-      <div class="note-wrapper">
-        <div class="note">تماس با فروشگاه و درخواست اعلام وضعیت سفارش، ددلاین برای 1 روز بعد تنظیم می شود و اگر مجدد فروشگاه همکاری نداشته باشد غیرفعال می‌شود</div>
-      </div>
-
-      <div class="node depth-2" onclick="toggle(this)">ارسال کالا ادعا شده اما تحویل به شرکت پستی احراز نشده</div>
-      <div class="note-wrapper">
-        <div class="note">مراحل ارسال کالا پیگیری می‌شود</div>
-      </div>
-
-      <div class="node depth-2" onclick="toggle(this)">کالا به شرکت پستی تحویل داده شده</div>
-      <div class="note-wrapper">
-        <div class="note">مراحل ارسال کالا پیگیری می‌شود</div>
-      </div>
-
-      <div class="node depth-2" onclick="toggle(this)">کالا موجود شده</div>
-      <div class="children">
-        <div class="node depth-3" onclick="toggle(this)">کاربر با ارسال کالا مخالف نیست</div>
-        <div class="note-wrapper">
-          <div class="note">مراحل ارسال کالا پیگیری می‌شود</div>
-        </div>
-
-        <div class="node depth-3" onclick="toggle(this)">کاربر با ارسال کالا مخالف است</div>
-        <div class="note-wrapper">
-          <div class="note">مراحل بازگشت وجه پیگیری می‌شود</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="node depth-1" onclick="toggle(this)">ارسال کالا ادعا شده اما تحویل به شرکت پستی احراز نشده</div>
-    <div class="note-wrapper">
-      <div class="note">مراحل ارسال کالا پیگیری می‌شود</div>
-    </div>
-
-    <div class="node depth-1" onclick="toggle(this)">کالا به شرکت پستی تحویل داده شده</div>
-    <div class="note-wrapper">
-      <div class="note">مراحل ارسال کالا پیگیری می‌شود</div>
-    </div>
-
-    <div class="node depth-1" onclick="toggle(this)">کاربر وجهی پرداخت نکرده</div>
-    <div class="note-wrapper">
-      <div class="note">پیام «بروز نبودن قیمت/موجودی و عدم پرداخت کاربر» در تیکت ارسال می‌شود. وضعیت تیکت به «رد شده» تغییر می‌کند.</div>
-    </div>
-
-    <div class="node depth-1" onclick="toggle(this)">کالا موجود شده</div>
-    <div class="children">
-      <div class="node depth-2" onclick="toggle(this)">کاربر با ارسال کالا مخالف نیست</div>
-      <div class="note-wrapper">
-        <div class="note">مراحل ارسال کالا پیگیری می‌شود</div>
-      </div>
-
-      <div class="node depth-2" onclick="toggle(this)">کاربر با ارسال کالا مخالف است</div>
-      <div class="note-wrapper">
-        <div class="note">مراحل بازگشت وجه پیگیری می‌شود</div>
-      </div>
-    </div>
-
-  </div>
+  <!-- بخش مشترک‌ها: توابع جاوااسکریپت برای ساخت بخش‌های تکراری -->
 
   <script>
-    function toggle(el) {
-      el.classList.toggle('open');
+    // تابع ساخت بلوک نوت ساده
+    function createNote(text) {
+      const noteWrapper = document.createElement('div');
+      noteWrapper.className = 'note-wrapper';
+      const note = document.createElement('div');
+      note.className = 'note';
+      note.innerHTML = text;
+      noteWrapper.appendChild(note);
+      return noteWrapper;
+    }
+
+    // تابع ساخت نود کلیک‌خور با کلاس عمق و متن
+    function createNode(text, depth) {
+      const node = document.createElement('div');
+      node.className = 'node depth-' + depth;
+      node.textContent = text;
+      node.onclick = function () {
+        node.classList.toggle('open');
+      };
+      return node;
+    }
+
+    // تابع ساخت یک بلوک با نود و بچه‌ها و نوت‌ها در صورت نیاز
+    function createNodeWithChildren(text, depth, childrenElements = [], noteText = '') {
+      const container = document.createElement('div');
+      const node = createNode(text, depth);
+      container.appendChild(node);
+      if (childrenElements.length > 0) {
+        const childrenDiv = document.createElement('div');
+        childrenDiv.className = 'children';
+        childrenElements.forEach(el => childrenDiv.appendChild(el));
+        container.appendChild(childrenDiv);
+      }
+      if (noteText) {
+        container.appendChild(createNote(noteText));
+      }
+      return container;
     }
   </script>
+
+  <div id="flow-container"></div>
+
+  <script>
+    // این بخش کد JS است که فلوها را می‌سازد
+
+    const flowContainer = document.getElementById('flow-container');
+
+    // --- بخش اول: بعد از سفارش گفتند ناموجود شده ---
+
+    // ایجاد بخش‌های عمق 3 و نوت‌ها برای بخش اول (برای بازگشت وجه انجام نشده)
+    const depth3_1 = createNodeWithChildren(
+      'کاربر جهت اعلام شماره کارت همکاری ندارد',
+      3,
+      [],
+      'پیام «درخواست شماره کارت از کاربر» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود و اگر مجددا کاربر همکاری نداشته باشد تیکت خاتمه می یابد'
+    );
+
+    const depth3_2 = createNodeWithChildren(
+      'بازگشت وجه هنوز انجام نشده',
+      3,
+      [],
+      'پیام «درخواست بازگشت وجه از فروشگاه» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود و اگر مجدد فروشگاه همکاری نداشته باشد غیرفعال می‌شود'
+    );
+
+    const depth3_3 = createNodeWithChildren(
+      'بازگشت وجه انجام شده',
+      3,
+      [],
+      'پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.'
+    );
+
+    // عمق 2 - بازگشت وجه انجام نشده - حاوی عمق 3 های بالا
+    const depth2_1_children = [depth3_1, depth3_2, depth3_3];
+    const depth2_1 = createNodeWithChildren('بازگشت وجه انجام نشده', 2, depth2_1_children);
+
+    // عمق 2 - بازگشت وجه انجام شده
+    const depth2_2 = createNodeWithChildren(
+      'بازگشت وجه انجام شده',
+      2,
+      [],
+      'پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.'
+    );
+
+    // عمق 1 - فروشگاه به روز نبودن قیمت/موجودی را تایید کرده و یا قصد بازگشت وجه دارد
+    const depth1_1_children = [depth2_1, depth2_2];
+    const depth1_1 = createNodeWithChildren(
+      'فروشگاه به روز نبودن قیمت/موجودی را تایید کرده و یا قصد بازگشت وجه دارد',
+      1,
+      depth1_1_children
+    );
+
+    // عمق 2 های بخش فروشگاه پاسخگو نیست
+    const depth2_store_not_responding_1 = createNodeWithChildren(
+      'فروشگاه به روز نبودن قیمت/موجودی را تایید کرده و یا قصد بازگشت وجه دارد',
+      2,
+      [],
+      'مراحل بازگشت وجه پیگیری می‌شود'
+    );
+
+    const depth2_store_not_responding_2 = createNodeWithChildren(
+      'فروشگاه پاسخگو نیست و وضعیت ارسال یا عودت وجه هنوز نامشخص است',
+      2,
+      [],
+      'تماس با فروشگاه و درخواست اعلام وضعیت سفارش، ددلاین برای 1 روز بعد تنظیم می شود و اگر مجدد فروشگاه همکاری نداشته باشد غیرفعال می‌شود'
+    );
+
+    const depth2_store_not_responding_3 = createNodeWithChildren(
+      'ارسال کالا ادعا شده اما تحویل به شرکت پستی احراز نشده',
+      2,
+      [],
+      'مراحل ارسال کالا پیگیری می‌شود'
+    );
+
+    const depth2_store_not_responding_4 = createNodeWithChildren(
+      'کالا به شرکت پستی تحویل داده شده',
+      2,
+      [],
+      'مراحل ارسال کالا پیگیری می‌شود'
+    );
+
+    const depth3_item_available_1 = createNodeWithChildren(
+      'کاربر با ارسال کالا مخالف نیست',
+      3,
+      [],
+      'مراحل ارسال کالا پیگیری می‌شود'
+    );
+
+    const depth3_item_available_2 = createNodeWithChildren(
+      'کاربر با ارسال کالا مخالف است',
+      3,
+      [],
+      'مراحل بازگشت وجه پیگیری می‌شود'
+    );
+
+    const depth2_item_available_children = [depth3_item_available_1, depth3_item_available_2];
+
+    const depth2_item_available = createNodeWithChildren('کالا موجود شده', 2, depth2_item_available_children);
+
+    // عمق 1 - فروشگاه پاسخگو نیست و وضعیت ارسال یا عودت وجه نامشخص است
+    const depth1_2_children = [
+      depth2_store_not_responding_1,
+      depth2_store_not_responding_2,
+      depth2_store_not_responding_3,
+      depth2_store_not_responding_4,
+      depth2_item_available
+    ];
+
+    const depth1_2 = createNodeWithChildren(
+      'فروشگاه پاسخگو نیست و وضعیت ارسال یا عودت وجه نامشخص است',
+      1,
+      depth1_2_children
+    );
+
+    const depth1_3 = createNodeWithChildren(
+      'ارسال کالا ادعا شده اما تحویل به شرکت پستی احراز نشده',
+      1,
+      [],
+      'مراحل ارسال کالا پیگیری می‌شود'
+    );
+
+    const depth1_4 = createNodeWithChildren(
+      'کالا به شرکت پستی تحویل داده شده',
+      1,
+      [],
+      'مراحل ارسال کالا پیگیری می‌شود'
+    );
+
+    const depth1_5 = createNodeWithChildren(
+      'کاربر وجهی پرداخت نکرده',
+      1,
+      [],
+      'پیام «بروز نبودن قیمت/موجودی و عدم پرداخت کاربر» در تیکت ارسال می‌شود. وضعیت تیکت به «رد شده» تغییر می‌کند.'
+    );
+
+    const depth1_6_children = [
+      createNodeWithChildren(
+        'کاربر با ارسال کالا مخالف نیست',
+        2,
+        [],
+        'مراحل ارسال کالا پیگیری می‌شود'
+      ),
+      createNodeWithChildren(
+        'کاربر با ارسال کالا مخالف است',
+        2,
+        [],
+        'مراحل بازگشت وجه پیگیری می‌شود'
+      ),
+    ];
+
+    const depth1_6 = createNodeWithChildren('کالا موجود شده', 1, depth1_6_children);
+
+    // عمق 0 - ریشه فلو اول
+    const root1_children = [depth1_1, depth1_2, depth1_3, depth1_4, depth1_5, depth1_6];
+    const root1 = createNodeWithChildren('بعد از سفارش گفتند ناموجود شده', 0, root1_children);
+
+    // --- بخش دوم: قیمت بعد از ثبت سفارش تغییر کرده ---
+
+    // بخش های تکراری بازگشت وجه انجام شده (می‌توان از قبل استفاده کنیم)
+    // همان note متن دلجویی از کاربر است
+
+    // بخش عمق 1 اصلی فلو دوم
+    const price_change_depth1_1 = createNodeWithChildren(
+      'فروشگاه قیمت را تایید کرده و قصد بازگشت وجه دارد',
+      1,
+      [
+        createNodeWithChildren(
+          'بازگشت وجه انجام نشده',
+          2,
+          [
+            createNodeWithChildren(
+              'کاربر جهت اعلام شماره کارت همکاری ندارد',
+              3,
+              [],
+              'پیام «درخواست شماره کارت از کاربر» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود و اگر مجددا کاربر همکاری نداشته باشد تیکت خاتمه می یابد'
+            ),
+            createNodeWithChildren(
+              'بازگشت وجه هنوز انجام نشده',
+              3,
+              [],
+              'پیام «درخواست بازگشت وجه از فروشگاه» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود و اگر مجدد فروشگاه همکاری نداشته باشد غیرفعال می‌شود'
+            ),
+            createNodeWithChildren(
+              'بازگشت وجه انجام شده',
+              3,
+              [],
+              'پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.'
+            ),
+          ]
+        ),
+        createNodeWithChildren(
+          'بازگشت وجه انجام شده',
+          2,
+          [],
+          'پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.'
+        ),
+      ]
+    );
+
+    const price_change_depth1_2 = createNodeWithChildren(
+      'فروشگاه قیمت را تایید نکرده و پاسخگو نیست',
+      1,
+      [
+        createNodeWithChildren(
+          'درخواست اعلام وضعیت قیمت به فروشگاه ارسال می‌شود',
+          2,
+          [],
+          'پیام درخواست اعلام وضعیت قیمت به فروشگاه ارسال می شود و ددلاین برای 1 روز بعد تنظیم می شود'
+        ),
+        createNodeWithChildren(
+          'فروشگاه پاسخگو نیست و وضعیت قیمت نامشخص است',
+          2,
+          [],
+          'تماس با فروشگاه و درخواست اعلام وضعیت قیمت، ددلاین برای 1 روز بعد تنظیم می شود و اگر مجدد فروشگاه همکاری نداشته باشد غیرفعال می‌شود'
+        ),
+      ]
+    );
+
+    const root2_children = [price_change_depth1_1, price_change_depth1_2];
+    const root2 = createNodeWithChildren('قیمت بعد از ثبت سفارش تغییر کرده', 0, root2_children);
+
+    // اضافه کردن ریشه‌ها به کانتینر اصلی صفحه
+    flowContainer.appendChild(root1);
+    flowContainer.appendChild(root2);
+
+  </script>
+
 </body>
 </html>
