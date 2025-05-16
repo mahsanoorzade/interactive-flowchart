@@ -207,86 +207,75 @@
 <div style="margin-top: 80px;"></div>
   
   <div class="node depth-0" onclick="toggle(this)">قیمت بعد از سفارش تغییر کرده</div>
+<div class="children">
+
+  <div class="node depth-1" onclick="toggle(this)">قیمت تغییر کرده و وضعیت پرداخت کاربر مشخص نیست</div>
   <div class="children">
+    <div class="note-child">پیام «درخواست توضیح وضعیت پرداخت کاربر بعد از افزایش قیمت» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می‌شود :</div>
 
-    <div class="node depth-1" onclick="toggle(this)">قیمت تغییر کرده و وضعیت پرداخت کاربر مشخص نیست</div>
-    <div class="children">
-
-      <div class="note-child">پیام «درخواست توضیح وضعیت پرداخت کاربر بعد از افزایش قیمت» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می‌شود :</div>
-
-      <div class="node depth-2" onclick="toggle(this)">قیمت تغییر کرده و وضعیت پرداخت کاربر هنوز مشخص نیست</div>
-      <div class="note-wrapper">
-        <div class="note">طی تماس از کاربر پیگیری صورت می‌گیرد و در صورتی که مجدد پاسخگو نباشد تیکت خاتمه می‌یابد.</div>
-      </div>
-
-      <div class="node depth-2" onclick="toggle(this)">وجه اولیه پرداخت شده اما وجه مازاد پرداخت نشده</div>
-
-      <div class="node depth-2" onclick="toggle(this)">کاربر وجه مازاد را پرداخت کرده</div>
-
-      <div class="node depth-2" onclick="toggle(this)">همه وجوه پرداخت شده عودت شده</div>
-
-      <div class="node depth-2" onclick="toggle(this)">کاربر وجهی پرداخت نکرده</div>
-
+    <div class="node depth-2" onclick="toggle(this)">قیمت تغییر کرده و وضعیت پرداخت کاربر هنوز مشخص نیست</div>
+    <div class="note-wrapper">
+      <div class="note">طی تماس از کاربر پیگیری صورت می‌گیرد و در صورتی که مجدد پاسخگو نباشد تیکت خاتمه می‌یابد.</div>
     </div>
 
-    <div class="node depth-1" onclick="toggle(this)">وجه اولیه پرداخت شده اما وجه مازاد پرداخت نشده</div>
+    <div class="node depth-2" onclick="toggle(this)">وجه اولیه پرداخت شده اما وجه مازاد پرداخت نشده</div>
+
+    <div class="node depth-2" onclick="toggle(this)">کاربر وجه مازاد را پرداخت کرده</div>
+
+    <div class="node depth-2" onclick="toggle(this)">همه وجوه پرداخت شده عودت شده</div>
+
+    <div class="node depth-2" onclick="toggle(this)">کاربر وجهی پرداخت نکرده</div>
+  </div>
+
+  <div class="node depth-1" onclick="toggle(this)">وجه اولیه پرداخت شده اما وجه مازاد پرداخت نشده</div>
+  <div class="children">
+    <div class="node depth-2" onclick="toggle(this)">به دلیل تغییر قیمت، کاربر درخواست بازگشت وجه دارد</div>
     <div class="children">
-
-      <div class="node depth-2" onclick="toggle(this)">به دلیل تغییر قیمت، کاربر درخواست بازگشت وجه دارد</div>
+      <div class="node depth-3" onclick="toggle(this)">فروشگاه به روز نبودن قیمت/موجودی را تایید کرده و یا قصد بازگشت وجه دارد</div>
       <div class="children">
-
-        <div class="node depth-3" onclick="toggle(this)">فروشگاه به روز نبودن قیمت/موجودی را تایید کرده و یا قصد بازگشت وجه دارد</div>
+        <div class="node depth-4" onclick="toggle(this)">بازگشت وجه انجام نشده</div>
         <div class="children">
-
-          <div class="node depth-4" onclick="toggle(this)">بازگشت وجه انجام نشده</div>
-          <div class="children">
-
-            <div class="node depth-5" onclick="toggle(this)">کاربر جهت اعلام شماره کارت همکاری ندارد</div>
-            <div class="note-wrapper">
-              <div class="note">پیام «درخواست شماره کارت از کاربر» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود و اگر مجددا کاربر همکاری نداشته باشد تیکت خاتمه می یابد</div>
-            </div>
-
-            <div class="node depth-5" onclick="toggle(this)">بازگشت وجه هنوز انجام نشده</div>
-            <div class="note-wrapper">
-              <div class="note">پیام «درخواست بازگشت وجه از فروشگاه» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود و اگر مجدد فروشگاه همکاری نداشته باشد غیرفعال می‌شود</div>
-            </div>
-
-            <div class="node depth-5" onclick="toggle(this)">بازگشت وجه انجام شده</div>
-            <div class="note-wrapper">
-              <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
-            </div>
-
+          <div class="node depth-5" onclick="toggle(this)">کاربر جهت اعلام شماره کارت همکاری ندارد</div>
+          <div class="note-wrapper">
+            <div class="note">پیام «درخواست شماره کارت از کاربر» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود و اگر مجددا کاربر همکاری نداشته باشد تیکت خاتمه می یابد</div>
           </div>
 
-          <div class="node depth-4" onclick="toggle(this)">بازگشت وجه انجام شده</div>
+          <div class="node depth-5" onclick="toggle(this)">بازگشت وجه هنوز انجام نشده</div>
+          <div class="note-wrapper">
+            <div class="note">پیام «درخواست بازگشت وجه از فروشگاه» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود و اگر مجدد فروشگاه همکاری نداشته باشد غیرفعال می‌شود</div>
+          </div>
+
+          <div class="node depth-5" onclick="toggle(this)">بازگشت وجه انجام شده</div>
           <div class="note-wrapper">
             <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
           </div>
-
         </div>
 
-        <div class="node depth-3" onclick="toggle(this)">فروشگاه تکلیف بازگشت وجه را مشخص نکرده</div>
+        <div class="node depth-4" onclick="toggle(this)">بازگشت وجه انجام شده</div>
         <div class="note-wrapper">
-          <div class="note">پیام «درخواست بازگشت وجه از فروشگاه» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود، در صورتی که مجدد پاسخگو نباشد غیرفعال می شود.</div>
+          <div class="note">پیام «دلجویی از کاربر» در تیکت ارسال می‌شود.<br>وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
         </div>
-
       </div>
 
-      <div class="node depth-2" onclick="toggle(this)">کاربر درخواست تامین با قیمت قبل را دارد</div>
-      <div class="children">
-
-        <div class="node depth-3" onclick="toggle(this)">فروشگاه درباره تامین با قیمت قبلی پاسخی نداده</div>
-        <div class="note-child">پیام «درخواست تامین کالا با قیمت قبلی» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد ست می شود :</div>
-
-        <div class="node depth-3" onclick="toggle(this)">فروشگاه تامین با قیمت قبلی را پذیرفته</div>
-
-        <div class="node depth-3" onclick="toggle(this)">فروشگاه تامین با قیمت قبلی را نپذیرفته</div>
-
+      <div class="node depth-3" onclick="toggle(this)">فروشگاه تکلیف بازگشت وجه را مشخص نکرده</div>
+      <div class="note-wrapper">
+        <div class="note">پیام «درخواست بازگشت وجه از فروشگاه» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می شود، در صورتی که مجدد پاسخگو نباشد غیرفعال می شود.</div>
       </div>
-
     </div>
 
+    <div class="node depth-2" onclick="toggle(this)">کاربر درخواست تامین با قیمت قبل را دارد</div>
+    <div class="children">
+      <div class="node depth-3" onclick="toggle(this)">فروشگاه درباره تامین با قیمت قبلی پاسخی نداده</div>
+      <div class="note-child">پیام «درخواست تامین کالا با قیمت قبلی» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد ست می شود :</div>
+
+      <div class="node depth-3" onclick="toggle(this)">فروشگاه تامین با قیمت قبلی را پذیرفته</div>
+
+      <div class="node depth-3" onclick="toggle(this)">فروشگاه تامین با قیمت قبلی را رد کرده</div>
+    </div>
   </div>
+
+</div>
+
   <script>
     function toggle(el) {
       el.classList.toggle('open');
