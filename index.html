@@ -382,10 +382,36 @@
 <div class="children">
 <div class="node depth-1" onclick="toggle(this)">مستندات کاربر برای تشخیص معیوبی و یا اولین زمان اعلام معیوبی کافی نیست</div>
   <div class="children">
+<div class="note-child">پیام «درخواست مستندات معیوبی یا مغایرت از کاربر» در تیکت ارسال می‌شود و ددلاین برای 1روز بعد تنظیم می‌شود :</div>
+<div class="node depth-2" onclick="toggle(this)">	مستندات کاربر برای معیوبی هنوز کافی نیست</div>
+<div class="note-wrapper">
+      <div class="note">طی تماس و پیام از کاربر درخواست مستندات می‌شود و اگر تا 24 ساعت بعد مستندات ارسال نشوند، تیکت خاتمه می‌یابد</div>
+</div>
+<div class="node depth-2" onclick="toggle(this)">مستندات معیوبی کافی است و عملکرد کالا دچار عیب است</div>
+<div class="note-wrapper">
+      <div class="note">سایر مراحل مربوط به معیوبی محصول و بازه اعلام معیوبی بررسی می‌شود. </div>
+</div>
+<div class="node depth-2" onclick="toggle(this)">مستندات معیوبی کافی است و ظاهر کالا دچار عیب است</div>
+ <div class="note-wrapper">
+      <div class="note">سایر مراحل مربوط به معیوبی محصول و بازه اعلام معیوبی بررسی می‌شود. </div>
+</div>
+
   </div>
+
 
 <div class="node depth-1" onclick="toggle(this)">فروشگاه بدون وجود مستندات کافی، مرجوعی را پذیرفته است</div>
   <div class="children">
+  <div class="node depth-2" onclick="toggle(this)">کالای معیوب یا مغایر مرجوع شده و هنوز به دست فروشگاه نرسیده</div>
+  <div class="children">
+  </div>
+
+<div class="node depth-2" onclick="toggle(this)">کالای معیوب یا مغایر مرجوع شده و به دست فروشگاه رسیده</div>
+  <div class="children">
+  </div>
+  
+<div class="node depth-2" onclick="toggle(this)">کالای معیوب یا مغایر مرجوع نشده</div>
+  <div class="children">
+  </div>
   </div>
 
 <div class="node depth-1" onclick="toggle(this)">مستندات معیوبی کافی است و عملکرد کالا دچار عیب است</div>
@@ -395,7 +421,7 @@
 <div class="node depth-1" onclick="toggle(this)">مستندات معیوبی کافی است و ظاهر کالا دچار عیب است</div>
   <div class="children">
   </div>
-
+  </div>
   <script>
     function toggle(el) {
       el.classList.toggle('open');
