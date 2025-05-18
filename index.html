@@ -418,6 +418,10 @@
 <div class="note-wrapper">
       <div class="note">پیام «صبوری کاربر تا رسیدن کالا به دست فروشگاه» در تیکت ارسال می‌شود و تیکت تا 3 روز بعد در انتظار اقدام قرار می‌گیرد، پس از این بازه، مدیریت تیکت به کارشناس واگذار می‌گردد.</div>
   </div>
+  <div class="node depth-3" onclick="toggle(this)">کالای معیوب یا مغایر مرجوع شده و به دست فروشگاه رسیده</div>
+  <div class="note-wrapper">
+      <div class="note">مدیریت تیکت به کارشناس واگذار می‌شود.</div>
+  </div>
 		<div class="node depth-3" onclick="toggle(this)">کالای معیوب یا مغایر هنوز مرجوع نشده</div>
 		<div class="note-wrapper">
       <div class="note">تماس با کاربر انجام می‌شود و پیام «پیگیری نهایی برای مرجوعی کالای معیوب یا مغایر توسط کاربر» در تیکت ارسال می‌شود و چنانچه مجدد مرجوعی صورت نگیرد، تیکت خاتمه می‌یابد.</div>
@@ -569,18 +573,200 @@
  <div class="node depth-0" onclick="toggle(this)">کالا مغایر است</div>
  <div class="children">
  <div class="node depth-1" onclick="toggle(this)">مرجوعی هنوز تایید نشده و مستندات کاربر برای مغایرت محصول یا تاریخ اعلام اولیه کامل نیست</div>
+ <div class="children">
+ <div class="note-child">پیام «درخواست مستندات معیوبی یا مغایرت از کاربر» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می‌شود:</div>
+  <div class="node depth-2" onclick="toggle(this)">مرجوعی هنوز تایید نشده و مستندات فروشگاه برای مغایرت و موعد تحویل کامل نیست</div>
+  <div class="note-wrapper">
+      <div class="note">پیام «درخواست فاکتور، لینک و کدرهگیری از فروشگاه برای بررسی مغایرت» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می‌شود، در صورتی که پس از 1 روز و تماس با فروشگاه مستندات کامل ارسال نشد، فروشگاه غیرفعال می‌شود.</div>
+  </div>
+ <div class="node depth-2" onclick="toggle(this)">مستندات کاربر برای مغایرت محصول یا تاریخ اعلام اولیه هنوز کامل نیست</div>
+ <div class="note-wrapper">
+      <div class="note">تماس با کاربر و پیام «خاتمه تیکت در صورت عدم پاسخ کاربر» در تیکت ارسال می‌شود، در صورتی که مجددا مستندات به صورت کامل ارسال نشود، تیکت خاتمه خواهد یافت.</div>
+  </div>
+ <div class="node depth-2" onclick="toggle(this)">موعد تحویل و مستندات مغایرت محصول و تاریخ اعلام مغایرت کامل است</div>
+  <div class="note-wrapper">
+      <div class="note">مغایرت محصول و شرایط مرجوعی بررسی  می‌شود</div>
+  </div>
+ <div class="node depth-2" onclick="toggle(this)">مغایرت مربوط به تفاوت مشخصات محصول در سایت و بیس ترب است</div>
+ <div class="note-wrapper">
+      <div class="note">مدیریت تیکت به کارشناس واگذار می‌شود.</div>
+  </div>
+
+   </div>
+
  <div class="node depth-1" onclick="toggle(this)">مرجوعی هنوز تایید نشده و مستندات فروشگاه برای مغایرت و موعد تحویل کامل نیست</div>
+ <div class="children">
+ <div class="note-child">پیام «درخواست فاکتور، لینک و کدرهگیری از فروشگاه برای بررسی مغایرت» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می‌شود:</div>
+ <div class="node depth-2" onclick="toggle(this)">مستندات فروشگاه برای مغایرت هنوز کامل نیست</div>
+  <div class="note-wrapper">
+      <div class="note">تماس با فروشگاه و پیام «پیگیری نهایی برای دریافت فاکتور، لینک و کدرهگیری کالای مغایر از فروشگاه» در تیکت ارسال می‌شود و در صورت عدم ارسال مستندات، فروشگاه غیرفعال می‌شود.</div>
+  </div>
+  <div class="node depth-2" onclick="toggle(this)">مرجوعی هنوز تایید نشده و مستندات کاربر برای مغایرت محصول یا تاریخ اعلام اولیه کامل نیست</div>
+  <div class="note-wrapper">
+      <div class="note">پیام «درخواست مستندات معیوبی یا مغایرت از کاربر» در تیکت ارسال می‌شود، در صورتی که پس از 24 ساعت و تماس با کاربر مستندات ارسال نشود، تیکت خاتمه خواهد یافت.</div>
+  </div>
+ <div class="node depth-2" onclick="toggle(this)">موعد تحویل و مستندات مغایرت محصول و تاریخ اعلام مغایرت کامل است</div>
+  <div class="note-wrapper">
+      <div class="note">مغایرت محصول و شرایط مرجوعی بررسی  می‌شود</div>
+  </div>
+   <div class="node depth-2" onclick="toggle(this)">مغایرت مربوط به تفاوت مشخصات محصول در سایت و بیس ترب است</div>
+ <div class="note-wrapper">
+      <div class="note">مدیریت تیکت به کارشناس واگذار می‌شود.</div>
+  </div>
+ </div>
+ 
  <div class="node depth-1" onclick="toggle(this)">کاربر حین تحویل مرسوله متوجه مغایرت شده و از دریافت آن خودداری نموده</div>
+ <div class="children">
+  <div class="node depth-2" onclick="toggle(this)">کاربر از دریافت محصول مغایر خودداری کرده و وجه عودت نشده</div>
+  <div class="children">
+ <div class="note-child">پیام «عدم دریافت کالای مغایر توسط کاربر و درخواست عودت وجه/ارسال مجدد از فروشگاه» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می‌شود :</div>
+ <div class="node depth-3" onclick="toggle(this)">کاربر از دریافت محصول مغایر خودداری کرده و وجه هنوز عودت نشده</div>
+ <div class="note-wrapper">
+      <div class="note">تماس با فروشگاه و پیام «عدم دریافت کالای مغایر توسط کاربر و درخواست عودت وجه/ارسال مجدد از فروشگاه» در تیکت ارسال می‌شود،  پس از 24 ساعت اگر مجدد فروشگاه پاسخگو نباید، غیرفعال می‌شود.</div>
+  </div>
+ <div class="node depth-3" onclick="toggle(this)">کاربر از دریافت محصول مغایر خودداری کرده و وجه عودت شده</div>
+ <div class="note-wrapper">
+      <div class="note">پیام «عدم دریافت محصول معیوب/مغایر و عودت وجه و خاتمه تیکت» در تیکت ارسال می‌شود و وضعیت تیکت به «خاتمه یافته/حل مشکل کاربر» تغییر می‌کند.</div>
+  </div>
+ <div class="node depth-3" onclick="toggle(this)">فروشگاه ادعا می‌کند محصول مطابق سفارش ارسال شده است</div>
+ <div class="note-wrapper">
+      <div class="note">مدیریت تیکت به کارشناس واگذار می‌شود.</div>
+  </div>
+    </div>
+
+ <div class="node depth-2" onclick="toggle(this)">کاربر از دریافت محصول مغایر خودداری کرده و وجه عودت شده</div>
+ <div class="note-wrapper">
+      <div class="note">پیام «عدم دریافت محصول معیوب/مغایر و عودت وجه و خاتمه تیکت» در تیکت ارسال می‌شود و وضعیت تیکت به «خاتمه یافته/حل مشکل کاربر» تغییر می‌کند.</div>
+  </div>
+ <div class="node depth-2" onclick="toggle(this)">فروشگاه ادعا می‌کند محصول مطابق سفارش ارسال شده است</div>
+ <div class="note-wrapper">
+      <div class="note">مدیریت تیکت به کارشناس واگذار می‌شود.</div>
+  </div>
+
+  </div>
+
+ 
+ 
  <div class="node depth-1" onclick="toggle(this)">موعد تحویل و مستندات مغایرت محصول و تاریخ اعلام مغایرت کامل است</div>
+  <div class="children">
+   <div class="node depth-2" onclick="toggle(this)">مغایرت در شرایط پلمپ تشخیص داده شده یا برای تشخیص آن نیاز به خروج از پلمپ بوده</div>
+     <div class="children">
+	  <div class="node depth-3" onclick="toggle(this)">مغایرت از ظاهر کالا مشخص بوده و در روز تحویل اعلام شده</div>
+	       <div class="children">
+ <div class="node depth-4" onclick="toggle(this)">فروشگاه پاسخگو نبوده و یا مرجوعی را نپذیرفته</div>
+ <div class="note-wrapper">
+      <div class="note">پیام «درخواست پذیرش مرجوعی کالای معیوب یا مغایر از فروشگاه» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می‌شود، در صورتی که مجدد فروشگاه پاسخگو نباشد غیرفعال می‌شود.</div>
+  </div>
+	   <div class="node depth-4" onclick="toggle(this)">فروشگاه مرجوعی را پذیرفته</div>
+<div class="children">
+	  <div class="node depth-5" onclick="toggle(this)">کالای معیوب یا مغایر مرجوع شده و هنوز به دست فروشگاه نرسیده</div>
+  <div class="note-wrapper">
+      <div class="note">پیام «صبوری کاربر تا رسیدن کالا به دست فروشگاه» در تیکت ارسال می‌شود و تیکت تا 3 روز بعد در انتظار اقدام قرار می‌گیرد، پس از این بازه، مدیریت تیکت به کارشناس واگذار می‌گردد.</div>
+  </div>
+
+<div class="node depth-5" onclick="toggle(this)">کالای معیوب یا مغایر مرجوع شده و به دست فروشگاه رسیده</div>
+  <div class="note-wrapper">
+      <div class="note">مدیریت تیکت به کارشناس واگذار می‌شود.</div>
+  </div>
+  
+<div class="node depth-5" onclick="toggle(this)">کالای معیوب یا مغایر مرجوع نشده</div>
+ <div class="note-wrapper">
+       <div class="note">پیام «مرجوعی کالای معیوب یا مغایر توسط کاربر» در تیکت ارسال می‌شود و ابتدا ددلاین 48 ساعته و سپس در صورت عدم مرجوعی، ددلاین 24 ساعته تنظیم می‌شود، در نهایت اگر کاربر مرجوع نکند، تیکت خاتمه می‌یابد.</div>
+	  	</div>
+	    </div>
+	    </div>
+
+ <div class="node depth-3" onclick="toggle(this)">مغایرت از ظاهر کالا قابل تشخیص نبوده و زودتر از ۷ روز اعلام شده</div>
+   <div class="children">
+ <div class="node depth-4" onclick="toggle(this)">فروشگاه پاسخگو نبوده و یا مرجوعی را نپذیرفته</div>
+ <div class="note-wrapper">
+      <div class="note">پیام «درخواست پذیرش مرجوعی کالای معیوب یا مغایر از فروشگاه» در تیکت ارسال می‌شود و ددلاین برای 1 روز بعد تنظیم می‌شود، در صورتی که مجدد فروشگاه پاسخگو نباشد غیرفعال می‌شود.</div>
+  </div>
+	   <div class="node depth-4" onclick="toggle(this)">فروشگاه مرجوعی را پذیرفته</div>
+<div class="children">
+	  <div class="node depth-5" onclick="toggle(this)">کالای معیوب یا مغایر مرجوع شده و هنوز به دست فروشگاه نرسیده</div>
+  <div class="note-wrapper">
+      <div class="note">پیام «صبوری کاربر تا رسیدن کالا به دست فروشگاه» در تیکت ارسال می‌شود و تیکت تا 3 روز بعد در انتظار اقدام قرار می‌گیرد، پس از این بازه، مدیریت تیکت به کارشناس واگذار می‌گردد.</div>
+  </div>
+
+<div class="node depth-5" onclick="toggle(this)">کالای معیوب یا مغایر مرجوع شده و به دست فروشگاه رسیده</div>
+  <div class="note-wrapper">
+      <div class="note">مدیریت تیکت به کارشناس واگذار می‌شود.</div>
+  </div>
+  
+<div class="node depth-5" onclick="toggle(this)">کالای معیوب یا مغایر مرجوع نشده</div>
+ <div class="note-wrapper">
+       <div class="note">پیام «مرجوعی کالای معیوب یا مغایر توسط کاربر» در تیکت ارسال می‌شود و ابتدا ددلاین 48 ساعته و سپس در صورت عدم مرجوعی، ددلاین 24 ساعته تنظیم می‌شود، در نهایت اگر کاربر مرجوع نکند، تیکت خاتمه می‌یابد.</div>
+	  	</div>
+	    </div>
+	    </div>
+ <div class="node depth-3" onclick="toggle(this)">مغایرت از ظاهر کالا مشخص بوده و بعد از یک روز اعلام شده</div>
+ <div class="note-wrapper">
+      <div class="note">مدیریت تیکت به کارشناس واگذار می‌شود.</div>
+  </div>
+ <div class="node depth-3" onclick="toggle(this)">مغایرت از ظاهر کالا قابل تشخیص نبوده و بعد از ۷ روز اعلام شده</div>
+<div class="note-wrapper">
+      <div class="note">پیام «اعلام مغایرت یا معیوبی خارج از بازه 7 روزه و خاتمه تیکت» در تیکت ارسال می‌شود و وضعیت تیکت به «خاتمه یافته/عدم احراز تخلف فروشگاه» تغییر می‌کند.</div>
+  </div>
+	   </div>
+
+   <div class="node depth-2" onclick="toggle(this)">مغایرت مربوط به تفاوت مشخصات محصول در سایت و بیس ترب است</div>
+   <div class="note-wrapper">
+      <div class="note">مدیریت تیکت به کارشناس واگذار می‌شود.</div>
+  </div>
+   <div class="node depth-2" onclick="toggle(this)">مغایرت محرز است و کالا بدون توجیه استفاده شده</div>
+   <div class="note-wrapper">
+      <div class="note">پیام «قصور کاربر به دلیل استفاده از کالای معیوب یا مغایر و خاتمه تیکت» در تیکت ارسال می‌شود و وضعیت تیکت به «خاتمه یافته/حل مشکل کاربر» تغییر می‌کند.</div>
+  </div>
+   <div class="node depth-2" onclick="toggle(this)">مغایرت محرز نیست</div>
+   <div class="note-wrapper">
+      <div class="note">پیام «عدم احراز مغایرت و خاتمه تیکت» در تیکت ارسال می‌شود و وضعیت تیکت به «خاتمه یافته/عدم احراز تخلف فروشگاه» تغییر می‌کند.</div>
+  </div>
+
+
+ 
+   </div>
+
  <div class="node depth-1" onclick="toggle(this)">مغایرت مربوط به تفاوت مشخصات محصول در سایت و بیس ترب است</div>
  <div class="note-wrapper">
       <div class="note">مدیریت تیکت به کارشناس واگذار می‌شود.</div>
   </div>
  <div class="node depth-1" onclick="toggle(this)">فروشگاه بدون وجود مستندات کافی، مرجوعی را پذیرفته است</div>
+ <div class="children">
+  <div class="node depth-2" onclick="toggle(this)">کالای معیوب یا مغایر مرجوع شده و هنوز به دست فروشگاه نرسیده</div>
+  <div class="note-wrapper">
+      <div class="note">پیام «صبوری کاربر تا رسیدن کالا به دست فروشگاه» در تیکت ارسال می‌شود و تیکت تا 3 روز بعد در انتظار اقدام قرار می‌گیرد، پس از این بازه، مدیریت تیکت به کارشناس واگذار می‌گردد.</div>
+  </div>
+
+<div class="node depth-2" onclick="toggle(this)">کالای معیوب یا مغایر مرجوع شده و به دست فروشگاه رسیده</div>
+  <div class="note-wrapper">
+      <div class="note">مدیریت تیکت به کارشناس واگذار می‌شود.</div>
+  </div>
+  
+<div class="node depth-2" onclick="toggle(this)">کالای معیوب یا مغایر مرجوع نشده</div>
+ <div class="children">
+       <div class="note-child">پیام «مرجوعی کالای معیوب یا مغایر توسط کاربر» در تیکت ارسال می‌شود و ددلاین 48 ساعته تنظیم می‌شود: </div>
+		<div class="node depth-3" onclick="toggle(this)">کالای معیوب یا مغایر مرجوع شده و هنوز به دست فروشگاه نرسیده</div>
+<div class="note-wrapper">
+      <div class="note">پیام «صبوری کاربر تا رسیدن کالا به دست فروشگاه» در تیکت ارسال می‌شود و تیکت تا 3 روز بعد در انتظار اقدام قرار می‌گیرد، پس از این بازه، مدیریت تیکت به کارشناس واگذار می‌گردد.</div>
+  </div>
+  <div class="node depth-3" onclick="toggle(this)">کالای معیوب یا مغایر مرجوع شده و به دست فروشگاه رسیده</div>
+  <div class="note-wrapper">
+      <div class="note">مدیریت تیکت به کارشناس واگذار می‌شود.</div>
+  </div>
+		<div class="node depth-3" onclick="toggle(this)">کالای معیوب یا مغایر هنوز مرجوع نشده</div>
+		<div class="note-wrapper">
+      <div class="note">تماس با کاربر انجام می‌شود و پیام «پیگیری نهایی برای مرجوعی کالای معیوب یا مغایر توسط کاربر» در تیکت ارسال می‌شود و چنانچه مجدد مرجوعی صورت نگیرد، تیکت خاتمه می‌یابد.</div>
+  </div>
+  </div>
+  </div>
+
+
  <div class="node depth-1" onclick="toggle(this)">کالا به دلیل استفاده از شرایط مرجوعی خارج شده</div>
  <div class="note-wrapper">
       <div class="note">پیام «قصور کاربر به دلیل استفاده از کالای معیوب یا مغایر و خاتمه تیکت» در تیکت ارسال می‌شود و وضعیت تیکت به «خاتمه یافته/عدم احراز تخلف فروشگاه» تغییر می‌کند.</div>
   </div>
+   </div>
    </div>
 
 <div style="margin-top: 80px;"></div>
