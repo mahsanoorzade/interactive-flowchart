@@ -86,6 +86,111 @@
       display: block;
       white-space: normal;
     }
+	/* کادر عنوان کلی */
+    .definitions-container {
+      border: 2px solid #007BFF;
+      border-radius: 12px;
+      background-color: #f0f8ff;
+      padding: 6px 20px;  /* کمتر کردم padding */
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      margin-bottom: 20px;
+      display: inline-block; /* تا عرض متن رو بگیره */
+      line-height: 1.4;
+      font-size: 18px;
+      font-weight: bold;
+      color: #0056b3;
+    }
+
+    .definitions-container:hover {
+      background-color: #d0e7ff;
+    }
+
+    .definitions-container::after {
+      content: '+';
+      position: absolute;
+      left: 1px;  /* کمی نزدیک‌تر به متن */
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      transition: transform 0.3s ease;
+    }
+
+    .definitions-container.active::after {
+      content: '−';
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    /* بخش تعاریف که مخفی یا نمایان میشه */
+    .definitions-list {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      margin-top: 15px;
+      padding-right: 10px;
+    }
+
+    .definitions-container.active + .definitions-list {
+      max-height: 1000px; /* ارتفاع کافی برای نمایش همه تعاریف */
+    }
+
+    /* هر تعریف بصورت کادر باز و بسته شونده خودش */
+    .definition-box {
+      border: 1.5px solid #007BFF;
+      border-radius: 10px;
+      padding: 12px 15px;
+      margin-bottom: 12px;
+      background-color: #e6f0ff;
+      font-size: 16px;
+      color: #003d99;
+      line-height: 1.4;
+      cursor: pointer;
+      position: relative;
+      user-select: none;
+    }
+
+    .definition-box:hover {
+      background-color: #cce0ff;
+    }
+
+    .definition-box .definition-title {
+      font-weight: bold;
+      user-select: none;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .definition-box .definition-title::before {
+      content: '+';
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 22px;
+      line-height: 1;
+      transition: transform 0.3s ease;
+    }
+
+    .definition-box.active .definition-title::before {
+      content: '−';
+      transform: rotate(180deg);
+    }
+
+    .definition-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      margin-top: 8px;
+      color: #333;
+      font-size: 15px;
+      line-height: 1.5;
+      padding-left: 15px;
+    }
+
+    .definition-box.active .definition-content {
+      max-height: 150px; /* یا به اندازه کافی */
+    }
+
   </style>
   <script>
     function toggle(el) {
@@ -96,6 +201,18 @@
 <body>
 
   <div class="title">فلوچارت درخت‌های تصمیم‌گیری</div>
+  
+  <div class="node depth-0" onclick="toggle(this)">زمان زیادی گذشته و هنوز نرسیده</div>
+    <div class="children">
+    <div class="node depth-1" onclick="toggle(this)">کد رهگیری یا مستندات ارسال داده شده</div>
+	
+    <div class="node depth-1" onclick="toggle(this)">پیگیری سفارش مربوط به فروشگاه نیست</div>
+    <div class="node depth-1" onclick="toggle(this)">کد رهگیری یا زمان ارسال مشخص نشده</div>
+    <div class="node depth-1" onclick="toggle(this)">زمان ارسال مشخص شده</div>
+
+          </div>
+
+<div style="margin-top: 80px;"></div>
 
   <div class="node depth-0" onclick="toggle(this)">بعد از سفارش گفتند ناموجود شده</div>
   <div class="children">
@@ -1195,12 +1312,65 @@
 
 
    </div>
-   
+      </div>
+
 
   <script>
     function toggle(el) {
       el.classList.toggle('open');
     }
   </script>
+ 
+  <div style="margin-top: 80px;"></div>
+
+  <!-- عنوان کلی تعاریف که با کلیک باز و بسته میشه -->
+<div class="definitions-container">راهنمای اصطلاحات</div>
+
+<!-- لیست تعاریف که با کلیک روی عنوان بالا باز و بسته میشن -->
+<div class="definitions-list">
+
+  <div class="definition-box">
+    <div class="definition-title"> روش ارسال انجام‌شده و مستندات مربوط به روش ارسال اولیه (در فاکتور یا توافقات قبلی)  </div>
+    <div class="definition-content"><p>
+  روش ارسال انجام شده، یعنی روش حمل و نقلی که فروشگاه محصول رو به واسطه اون ارسال کرده و به دست کاربر رسیده.<br>
+  مستندات مربوط به روش ارسال اولیه در فاکتور یا توافقات قبلی، یعنی روش ارسالی که کاربر حین ثبت سفارش در سایت مشاهده کرده و یا با فروشگاه هماهنگی و توافق کرده.<br>
+  به طور مثال <strong>نه روش ارسال انجام‌شده مشخص است و نه مستندات مربوط به روش ارسال اولیه (در فاکتور یا توافقات قبلی) موجود است</strong> یعنی در تیکت مشخص نیست سفارش با چه روشی ارسال شده، همچنین فاکتور یا مستنداتی که نشون بدن کاربر حین خرید چه روش ارسالی رو انتخاب کرده، مشاهده کرده یا با فروشگاه توافق کرده موجود نیست.
+</p>
+
+ </div>
+  </div>
+
+  <div class="definition-box">
+    <div class="definition-title">هزینه ارسال نهایی پرداخت‌شده توسط کاربر و فاکتور سفارش یا توافقات پیش از ارسال</div>
+    <div class="definition-content"><p>
+	هزینه ارسال نهایی پرداخت شده توسط کاربر، یعنی هزینه ارسالی که کاربر در ازای دریافت محصول به مرکز ارسال یا  فروشگاه پرداخت کرده، شامل حالت های مختلفی هم هست، ممکنه یک بار در سایت فروشگاه پرداخت کرده باشه، یک بار هم به مامور مرکز ارسال ، یا فقط در سایت و فقط به مامور مرکز ارسال پرداخت کرده باشه، در نهایت هدف ما، مشخص بوده کل هزینه ارسال پرداخت شده توسط کاربر هست.<br>
+	منظور از فاکتور سفارش یا توافقات پیش از ارسال، یعنی مستنداتی که نشون بدن کاربر در زمان خرید در سایت فروشگاه، چه هزینه ارسالی رو مشاهده کرده و در فاکتورش ثبت شده، همچنین ممکنه جدا از مراحل خرید، با فروشگاه توافقات و هماهنگی بابت روش یا هزینه  ارسال داشته باشه، بنابراین هر مستنداتی که نشون بده در فاکتور یا توافقات، هزینه ارسال چه مقداری اعلام شده، مدنظر هست.<br>
+به طور مثال، <strong>نه مستندات هزینه ارسال نهایی پرداخت شده توسط کاربر موجود است و نه فاکتور سفارش یا توافقات پیش از ارسال مشخص است</strong>  یعنی در تیکت مستنداتی که نشون بده کاربر چه مبلغی رو بابت هزینه ارسال پرداخت کرده موجود و مشخص نیست، همچنین اطلاع نداریم که کاربر در زمان خرید چه هزینه ارسالی رو مشاهده کرده یا با فروشگاه توافق داشته.
+
+	</p>
+    </div>
+  </div>
+
+  
+
+</div>
+
+<script>
+  const container = document.querySelector('.definitions-container');
+  const definitionBoxes = document.querySelectorAll('.definition-box');
+
+  container.addEventListener('click', () => {
+    container.classList.toggle('active');
+  });
+
+  definitionBoxes.forEach(box => {
+    const title = box.querySelector('.definition-title');
+    title.addEventListener('click', e => {
+      e.stopPropagation();
+      box.classList.toggle('active');
+    });
+  });
+</script>
 </body>
 </html>
+
