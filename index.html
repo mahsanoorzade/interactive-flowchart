@@ -2,7 +2,7 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8" />
-  <title>فلوچارت - سفارش ناموجود</title>
+  <title>فلوچارت</title>
   <style>
     body {
       font-family: sans-serif;
@@ -205,7 +205,87 @@
   <div class="node depth-0" onclick="toggle(this)">زمان زیادی گذشته و هنوز نرسیده</div>
     <div class="children">
     <div class="node depth-1" onclick="toggle(this)">کد رهگیری یا مستندات ارسال داده شده</div>
-	
+		<div class="children">
+	    <div class="node depth-2" onclick="toggle(this)">کدرهگیری داده شده اما تحویل به شرکت پستی احراز نشده</div>
+			<div class="children">
+			<div class="note-child">پیام «درخواست بررسی مشخصات ارسال» در تیکت ارسال می‌شود و ددلاین برای 3 روز بعد تنظیم می‌شود:</div>
+			<div class="node depth-3" onclick="toggle(this)">کاربر کد رهگیری را رد نکرده و فروشگاه هم مستندات نداده</div>
+				<div class="children">
+				<div class="node depth-4" onclick="toggle(this)">کالا ۳ روز یا کم‌تر، پس از زمان ثبت سفارش به شرکت پستی تحویل داده شده</div>
+				 <div class="note-wrapper">
+				<div class="note">پیام «تحویل کالا به پست به کاربر» در تیکت ارسال می‌شود و وضعیت تیکت به «خاتمه یافته/عدم احراز تخلف فروشگاه» تغییر می‌کند.</div>
+				</div>
+				<div class="node depth-4" onclick="toggle(this)">کالا ۴ یا ۵ روز پس از زمان ثبت سفارش به شرکت پستی تحویل داده شده</div>
+				<div class="note-wrapper">
+				<div class="note">پیام «تحویل کالا به پست به کاربر» در تیکت ارسال می‌شود و وضعیت تیکت به «خاتمه یافته/حل مشکل کاربر» تغییر می‌کند.</div>
+				</div>
+				<div class="node depth-4" onclick="toggle(this)">کالا بعد از ۵ روز پس از زمان ثبت سفارش به شرکت پستی تحویل داده شده</div>
+				<div class="note-wrapper">
+				<div class="note">پیام « تحویل کالا به پست به کاربر» در تیکت ارسال می‌شود و وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
+				</div>
+				<div class="node depth-4" onclick="toggle(this)">زمان تحویل کالا مشخص نیست</div>
+				<div class="note-wrapper">
+				<div class="note">پیام «تحویل کالا به پست به کاربر» در تیکت ارسال می‌شود و وضعیت تیکت به «خاتمه یافته/حل مشکل کاربر» تغییر می‌کند.</div>
+				</div>
+				</div>
+				
+			<div class="node depth-3" onclick="toggle(this)">کاربر تحویل کالا به خود یا شرکت پستی را تایید کرده</div>
+			<div class="children">
+				<div class="node depth-4" onclick="toggle(this)">کالا ۳ روز یا کم‌تر، پس از زمان ثبت سفارش به شرکت پستی تحویل داده شده</div>
+				 <div class="note-wrapper">
+				<div class="note">پیام «تحویل کالا به پست به کاربر» در تیکت ارسال می‌شود و وضعیت تیکت به «خاتمه یافته/عدم احراز تخلف فروشگاه» تغییر می‌کند.</div>
+				</div>
+				<div class="node depth-4" onclick="toggle(this)">کالا ۴ یا ۵ روز پس از زمان ثبت سفارش به شرکت پستی تحویل داده شده</div>
+				<div class="note-wrapper">
+				<div class="note">پیام «تحویل کالا به پست به کاربر» در تیکت ارسال می‌شود و وضعیت تیکت به «خاتمه یافته/حل مشکل کاربر» تغییر می‌کند.</div>
+				</div>
+				<div class="node depth-4" onclick="toggle(this)">کالا بعد از ۵ روز پس از زمان ثبت سفارش به شرکت پستی تحویل داده شده</div>
+				<div class="note-wrapper">
+				<div class="note">پیام « تحویل کالا به پست به کاربر» در تیکت ارسال می‌شود و وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
+				</div>
+				<div class="node depth-4" onclick="toggle(this)">زمان تحویل کالا مشخص نیست</div>
+				<div class="note-wrapper">
+				<div class="note">پیام «تحویل کالا به پست به کاربر» در تیکت ارسال می‌شود و وضعیت تیکت به «خاتمه یافته/حل مشکل کاربر» تغییر می‌کند.</div>
+				</div>
+				</div>
+			<div class="node depth-3" onclick="toggle(this)">کد رهگیری یا مستندات ارسال نامعتبر است</div>
+			<div class="node depth-3" onclick="toggle(this)">کد رهگیری یا مستندات ارسال داده شده</div>
+			</div>
+		<div class="node depth-2" onclick="toggle(this)">کاربر تحویل کالا به خود یا شرکت پستی را تایید کرده</div>
+		<div class="children">
+				<div class="node depth-3" onclick="toggle(this)">کالا ۳ روز یا کم‌تر، پس از زمان ثبت سفارش به شرکت پستی تحویل داده شده</div>
+				 <div class="note-wrapper">
+				<div class="note">پیام «تحویل کالا به پست به کاربر» در تیکت ارسال می‌شود و وضعیت تیکت به «خاتمه یافته/عدم احراز تخلف فروشگاه» تغییر می‌کند.</div>
+				</div>
+				<div class="node depth-3" onclick="toggle(this)">کالا ۴ یا ۵ روز پس از زمان ثبت سفارش به شرکت پستی تحویل داده شده</div>
+				<div class="note-wrapper">
+				<div class="note">پیام «تحویل کالا به پست به کاربر» در تیکت ارسال می‌شود و وضعیت تیکت به «خاتمه یافته/حل مشکل کاربر» تغییر می‌کند.</div>
+				</div>
+				<div class="node depth-3" onclick="toggle(this)">کالا بعد از ۵ روز پس از زمان ثبت سفارش به شرکت پستی تحویل داده شده</div>
+				<div class="note-wrapper">
+				<div class="note">پیام « تحویل کالا به پست به کاربر» در تیکت ارسال می‌شود و وضعیت تیکت به «خاتمه یافته/تخلف فروشگاه» تغییر می‌کند.</div>
+				</div>
+				<div class="node depth-3" onclick="toggle(this)">زمان تحویل کالا مشخص نیست</div>
+				<div class="note-wrapper">
+				<div class="note">پیام «تحویل کالا به پست به کاربر» در تیکت ارسال می‌شود و وضعیت تیکت به «خاتمه یافته/حل مشکل کاربر» تغییر می‌کند.</div>
+				</div>
+				</div>
+		<div class="node depth-2" onclick="toggle(this)">کد رهگیری یا مستندات ارسال نامعتبر است</div>
+		<div class="children">
+				<div class="node depth-3" onclick="toggle(this)">کدرهگیری یا مستندات ارسال اشتباه است و زیر ۷ روز از زمان ثبت سفارش گذشته</div>
+						<div class="children">
+							<div class="note-child">پیام «درخواست تصحیح کدرهگیری یا مستندات ارسال» در تیکت ارسال می‌شود و ددلاین برای 5 روز بعد از تاریخ ثبت سفارش تنظیم می‌شود : </div>
+				<div class="node depth-4" onclick="toggle(this)"></div>
+				<div class="node depth-4" onclick="toggle(this)"></div>
+				<div class="node depth-4" onclick="toggle(this)"></div>
+				<div class="node depth-4" onclick="toggle(this)"></div>
+</div>
+				<div class="node depth-3" onclick="toggle(this)">کدرهگیری یا مستندات ارسال نامعتبر است و بالای ۷ روز از سفارش گذشته</div>
+				</div>
+		<div class="node depth-2" onclick="toggle(this)">کالا به شرکت پستی تحویل داده شده</div>
+		<div class="node depth-2" onclick="toggle(this)">مشخصات گیرنده مغایرت دارد</div>
+		</div>
+
     <div class="node depth-1" onclick="toggle(this)">پیگیری سفارش مربوط به فروشگاه نیست</div>
     <div class="node depth-1" onclick="toggle(this)">کد رهگیری یا زمان ارسال مشخص نشده</div>
     <div class="node depth-1" onclick="toggle(this)">زمان ارسال مشخص شده</div>
